@@ -1,0 +1,30 @@
+/* CSS reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* Root font size - 10px by default */
+    // font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+// ul {
+//     list-style: none;
+
+//     li {
+//         margin: 0;
+//     }
+// }
+
+// a:link,
+// a:visited {
+//     text-decoration: none;
+// }

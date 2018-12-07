@@ -1,0 +1,10 @@
+.clock {
+  margin-bottom: 1rem;
+
+  &__plate {
+    padding: .4rem;
+    border-radius: .2rem;
+    color: $color-white;
+    background-color: $color-btn-bg;
+  }
+}
