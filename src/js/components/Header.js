@@ -2,6 +2,7 @@ import { toHtml } from '../utils/helper';
 import Component from '../framework/Component';
 import Clock from './Clock';
 import Options from './Options';
+import Navbar from './Navbar';
 
 class Header extends Component {
   constructor(props) {
@@ -9,9 +10,11 @@ class Header extends Component {
 
     this.host = document.createElement('header');
     this.host.classList.add('header');
+    // this.host.classList.add('fixed-top');
 
     this.clock = new Clock();
     this.options = new Options(props);
+    this.navbar = new Navbar(props);
   }
 
   render() {
@@ -37,7 +40,10 @@ class Header extends Component {
     node.getElementById('clock-placeholder').append(this.clock.update());
     node.getElementById('options-placeholder').append(this.options.update({ isLogin: login}));
 
-    return node;
+    return [
+      node,
+      this.navbar.update({})
+    ];
   }
 }
 

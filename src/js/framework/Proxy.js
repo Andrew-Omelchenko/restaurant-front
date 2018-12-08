@@ -19,7 +19,6 @@ class Proxy extends Component {
   render() {
     return [
       this.header.update({}),
-      this.navbar.update({}),
       this.component.update({}),
       this.footer.update({})
     ];

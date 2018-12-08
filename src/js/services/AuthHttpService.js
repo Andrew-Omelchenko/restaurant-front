@@ -10,12 +10,24 @@ class AuthHttpService {
       headers.append('Authorization', `Bearer ${AUTH_SERVICE.token}`);
     }
 
-    return fetch(`${API.BASE_URL}${endpoint}`, { headers })
+    const init = { 
+      method: 'GET',
+      headers: headers,
+      mode: 'cors',
+      cache: 'default' 
+    };
+
+    return fetch(`${API.BASE_URL}${endpoint}`, init)
       .then(processResponse);
   }
 
   post(endpoint, payload) {
     const headers = new Headers({ 'content-type': 'application/json' });
+
+    if (AUTH_SERVICE.isAuthorized()) {
+      headers.append('Authorization', `Bearer ${AUTH_SERVICE.token}`);
+    }
+
     const init = { 
       method: 'POST',
       headers: headers,
@@ -24,12 +36,12 @@ class AuthHttpService {
       cache: 'default' 
     };
 
-    if (AUTH_SERVICE.isAuthorized()) {
-      headers.append('Authorization', `Bearer ${AUTH_SERVICE.token}`);
-    }
-
     return fetch(`${API.BASE_URL}${endpoint}`, init)
       .then(processResponse);
+  }
+
+  getDishes() {
+    return this.get(API.ENDPOINTS.MENU);
   }
   
   createUser(userData) {

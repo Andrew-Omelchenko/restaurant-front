@@ -1,3 +1,5 @@
+var $ = require('jquery');
+
 export const bindAll = (context, ...names) => {
   names.forEach(name => {
     if (typeof context[name] === 'function') {
@@ -68,4 +70,8 @@ export function getPoint(canvSize, diam, iter, maxIter) {
   point.y = Math.floor(offset + randomRadius * Math.sin(randomAngle));
   // console.log(radiusSquared, randomRadius, randomAngle, offset, point.x, point.y);
   return point;
+};
+
+export function jQueryReset() {
+  $('#table_id').DataTable();
 };

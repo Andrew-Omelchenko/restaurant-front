@@ -6,7 +6,7 @@ class Component {
     this.props = props || {};
     this.host = null;
 
-    bindAll(this, 'updateState', 'update');
+    bindAll(this, 'updateState', 'update', 'postRender');
   }
 
   _render() {
@@ -21,6 +21,8 @@ class Component {
     } else {
       this.host.append(children);
     }
+
+    this.postRender();
 
     return this.host;
   }
@@ -43,6 +45,8 @@ class Component {
   }
 
   render() {}
+
+  postRender() {}
 }
 
 export default Component;

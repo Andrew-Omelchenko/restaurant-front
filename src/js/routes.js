@@ -3,6 +3,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Profile from './components/Profile';
 import Home from './components/Home';
+import Dishes from './components/Dishes';
 
 const routes = [
   {
@@ -25,6 +26,10 @@ const routes = [
     href: '/profile',
     component: Profile,
     authorized: AUTH_SERVICE.isAuthorized
+  },
+  {
+    href: '/dishes',
+    component: Dishes
   },
   {
     href: '/logout',

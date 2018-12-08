@@ -52,7 +52,7 @@ class Carousel extends Component {
             </a>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 text-center">
           <p>Welcome, dear friends!</p>
         </div>
       </div>

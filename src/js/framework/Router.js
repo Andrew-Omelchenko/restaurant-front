@@ -1,3 +1,4 @@
+import { jQueryReset } from '../utils/helper';
 import Component from './Component';
 import Proxy from './Proxy';
 import { bindAll, isEqualPaths, extractUrlParams } from '../utils/helper';
@@ -20,6 +21,7 @@ class Router extends Component {
 
     window.addEventListener('hashchange', () => {
       this.handleUrlChange(this.path);
+      jQueryReset();
     });
 
     this.handleUrlChange(this.path);
