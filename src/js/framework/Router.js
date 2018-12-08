@@ -52,7 +52,7 @@ class Router extends Component {
       }
 
       this.updateState({
-        currentComponent: new nextRoute.component(),
+        currentComponent: new nextRoute.component({}, new nextRoute.args()),
         currentRoute: nextRoute
       });
     }
