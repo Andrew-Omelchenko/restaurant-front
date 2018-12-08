@@ -1,8 +1,20 @@
-import Proxy from './Proxy';
+import Component from '../framework/Component';
+import Carousel from './Carousel';
 
-class Home extends Proxy {
-  constructor(props, args) {
-    super(props, args);
+class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.carousel = new Carousel();
+
+    this.host = document.createElement('div');
+    this.host.classList.add('home-content');
+  }
+
+  render() {
+    return [
+      this.carousel.update({})
+    ];
   }
 }
 

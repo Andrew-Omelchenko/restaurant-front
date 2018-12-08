@@ -1,6 +1,6 @@
 import Component from '../framework/Component';
 
-class CarouselComponent extends Component {
+class Carousel extends Component {
   constructor(props) {
     super(props);
 
@@ -60,4 +60,4 @@ class CarouselComponent extends Component {
   }
 }
 
-export default CarouselComponent;
+export default Carousel;

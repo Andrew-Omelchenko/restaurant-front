@@ -1,10 +1,9 @@
-import { API } from '../utils/config';
 import { toHtml } from '../utils/helper';
 import Component from '../framework/Component';
 import Clock from './Clock';
 import Options from './Options';
 
-class HeaderComponent extends Component {
+class Header extends Component {
   constructor(props) {
     super(props);
 
@@ -42,4 +41,4 @@ class HeaderComponent extends Component {
   }
 }
 
-export default HeaderComponent;
+export default Header;

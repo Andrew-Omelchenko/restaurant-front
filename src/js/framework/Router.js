@@ -1,4 +1,5 @@
 import Component from './Component';
+import Proxy from './Proxy';
 import { bindAll, isEqualPaths, extractUrlParams } from '../utils/helper';
 
 class Router extends Component {
@@ -52,7 +53,7 @@ class Router extends Component {
       }
 
       this.updateState({
-        currentComponent: new nextRoute.component({}, new nextRoute.args()),
+        currentComponent: new Proxy({}, new nextRoute.component()),
         currentRoute: nextRoute
       });
     }

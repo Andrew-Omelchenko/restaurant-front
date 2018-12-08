@@ -1,12 +1,8 @@
 import { AUTH_SERVICE } from './services/AuthService';
 import Login from './components/Login';
-import LoginComponent from './components/LoginComponent';
 import Register from './components/Register';
-import RegisterComponent from './components/RegisterComponent';
 import Profile from './components/Profile';
-import ProfileComponent from './components/ProfileComponent';
 import Home from './components/Home';
-import HomeComponent from './components/HomeComponent';
 
 const routes = [
   {
@@ -15,23 +11,19 @@ const routes = [
   },
   {
     href: '/',
-    component: Home,
-    args: HomeComponent
+    component: Home
   },
   {
     href: '/login',
-    component: Login,
-    args: LoginComponent
+    component: Login
   },
   {
     href: '/register',
-    component: Register,
-    args: RegisterComponent
+    component: Register
   },
   {
     href: '/profile',
     component: Profile,
-    args: ProfileComponent,
     authorized: AUTH_SERVICE.isAuthorized
   },
   {

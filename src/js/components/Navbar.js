@@ -1,6 +1,6 @@
 import Component from '../framework/Component';
 
-class NavbarComponent extends Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
 
@@ -51,4 +51,4 @@ class NavbarComponent extends Component {
   }
 }
 
-export default NavbarComponent;
+export default Navbar;

@@ -1,6 +1,6 @@
 import Component from '../framework/Component';
 
-class FooterComponent extends Component {
+class Footer extends Component {
   constructor(props) {
     super(props);
 
@@ -38,4 +38,4 @@ class FooterComponent extends Component {
   }
 }
 
-export default FooterComponent;
+export default Footer;
