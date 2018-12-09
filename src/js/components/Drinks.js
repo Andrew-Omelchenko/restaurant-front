@@ -17,7 +17,7 @@ class Drinks extends Component {
         console.log(res);
         this.data = res.answer;
         this.updateState({});
-        jQueryReset();
+        jQueryReset('table_id');
       })
       .catch(err => {
         console.log(err);
@@ -26,17 +26,15 @@ class Drinks extends Component {
 
   render() {
     let str = `
-      <h3>WINE CARD</h3>
-      <table id="table_id" class="table table-sm table-striped">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Item</th>
-            <th scope="col">Category</th>
-            <th scope="col">Price</th>
-          </tr>
-        </thead>
-        <tbody>`;
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Item</th>
+          <th scope="col">Category</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>`;
 
     this.data.forEach(elem => {
       str += `
@@ -50,8 +48,15 @@ class Drinks extends Component {
 
     str += `
         </tbody>
-      </table>`;
-    return str;
+    `;
+    
+    const table = document.createElement('table');
+    table.setAttribute('id', 'table_id');
+    table.classList.add('table', 'table-sm', 'table-striped');
+    table.innerHTML = str;
+    jQueryReset('table_id');
+
+    return table;
   }
 }
 

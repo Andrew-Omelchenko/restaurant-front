@@ -21,7 +21,6 @@ class Router extends Component {
 
     window.addEventListener('hashchange', () => {
       this.handleUrlChange(this.path);
-      jQueryReset();
     });
 
     this.handleUrlChange(this.path);

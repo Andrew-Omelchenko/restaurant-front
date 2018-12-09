@@ -1,4 +1,4 @@
-var $ = require('jquery');
+var $ = require( 'jquery' );
 
 export const bindAll = (context, ...names) => {
   names.forEach(name => {
@@ -72,6 +72,7 @@ export function getPoint(canvSize, diam, iter, maxIter) {
   return point;
 };
 
-export function jQueryReset() {
-  $('#table_id').DataTable();
+export function jQueryReset(table_name) {
+  $(`#${table_name}`).DataTable();
+  $('.dataTables_length').addClass('bs-select');
 };

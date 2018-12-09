@@ -5,6 +5,7 @@ import Profile from './components/Profile';
 import Home from './components/Home';
 import Dishes from './components/Dishes';
 import Drinks from './components/Drinks';
+import Geo from './components/Geo';
 
 const routes = [
   {
@@ -35,6 +36,10 @@ const routes = [
   {
     href: '/drinks',
     component: Drinks
+  },
+  {
+    href: '/location',
+    component: Geo
   },
   {
     href: '/logout',

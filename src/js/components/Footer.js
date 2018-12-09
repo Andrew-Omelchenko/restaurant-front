@@ -20,7 +20,7 @@ class Footer extends Component {
             <a href="https://www.instagram.com/p/0nUyKnMJw4/" class="text-white footer__href">
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
-            <a href="mailto:hello@gmail.com" class="text-white footer__href">
+            <a href="mailto:welcome.vin@gmail.com" class="text-white footer__href">
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </a>
           </div>

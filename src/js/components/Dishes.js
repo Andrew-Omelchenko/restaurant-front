@@ -17,7 +17,7 @@ class Dishes extends Component {
         console.log(res);
         this.data = res.answer;
         this.updateState({});
-        jQueryReset();
+        jQueryReset('table_id');
       })
       .catch(err => {
         console.log(err);
@@ -26,25 +26,23 @@ class Dishes extends Component {
 
   render() {
     let str = `
-      <h3>OUR MENU</h3>
-      <table id="table_id" class="table table-sm table-striped">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Item</th>
-            <th scope="col">Description</th>
-            <th scope="col">Category</th>
-            <th scope="col">Price</th>
-          </tr>
-        </thead>
-        <tbody>`;
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Item</th>
+          <th scope="col">Description</th>
+          <th scope="col">Category</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>`;
 
     this.data.forEach(elem => {
       str += `
         <tr>
-          <th scope="row">${elem.id}</th>
-          <td>${elem.item}</td>
-          <td>${elem.description}</td>
+          <th scope="row">${elem.id}</span></th>
+          <td>${elem.item}</span></td>
+          <td>${elem.description}</span></td>
           <td>${elem.category}</td>
           <td>${elem.price}</td>
         </tr>`;
@@ -52,8 +50,15 @@ class Dishes extends Component {
 
     str += `
         </tbody>
-      </table>`;
-    return str;
+    `;
+
+    const table = document.createElement('table');
+    table.setAttribute('id', 'table_id');
+    table.classList.add('table', 'table-sm', 'table-striped');
+    table.innerHTML = str;
+    jQueryReset('table_id');
+    
+    return table;
   }
 }
 
