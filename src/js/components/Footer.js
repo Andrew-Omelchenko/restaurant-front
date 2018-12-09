@@ -28,11 +28,6 @@ class Footer extends Component {
             <a href="tel:+442074057686" class="text-white">+44(20) 74057686</a>
           </div>
         </div>
-        <div class="row">
-          <p class="col-sm-12 text-center footer__copyright">
-            Restaurant Managment&copy;, 2018
-          </p>
-        </div>
       </div>
     `;
   }

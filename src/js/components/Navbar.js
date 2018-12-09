@@ -29,7 +29,7 @@ class Navbar extends Component {
               <a class="dropdown-item" href="#">FEATURED</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#/dishes">FOOD</a>
-              <a class="dropdown-item" href="#">DRINK</a>
+              <a class="dropdown-item" href="#/drinks">DRINK</a>
             </div>
           </li>
           <li class="nav-item">

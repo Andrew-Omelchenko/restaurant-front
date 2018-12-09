@@ -43,6 +43,10 @@ class AuthHttpService {
   getDishes() {
     return this.get(API.ENDPOINTS.MENU);
   }
+
+  getDrinks() {
+    return this.get(API.ENDPOINTS.DRINKS);
+  }
   
   createUser(userData) {
     return this.post(API.ENDPOINTS.CREATE_USER, JSON.stringify(userData));

@@ -3,10 +3,10 @@ export const API = {
   ENDPOINTS: {
     CREATE_USER: '/register',
     LOGIN: '/signin',
-    MY_INFO: '/profile',
-    MENU: '/menu'
-  },
-  LOGO: '/static/images/pizza-cat.png'
+    PROFILE: '/profile',
+    MENU: '/menu',
+    DRINKS: '/winecard'
+  }
 };
 
 // export const STATUS_CODES = {

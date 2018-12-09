@@ -4,6 +4,7 @@ import Register from './components/Register';
 import Profile from './components/Profile';
 import Home from './components/Home';
 import Dishes from './components/Dishes';
+import Drinks from './components/Drinks';
 
 const routes = [
   {
@@ -30,6 +31,10 @@ const routes = [
   {
     href: '/dishes',
     component: Dishes
+  },
+  {
+    href: '/drinks',
+    component: Drinks
   },
   {
     href: '/logout',
