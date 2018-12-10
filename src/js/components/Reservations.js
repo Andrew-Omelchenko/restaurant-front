@@ -18,6 +18,11 @@ class Reservations extends Component {
     const htmlString = `
       <div class="row bg-dark text-white">
         <div class="col-sm-6 text-center">
+        <div class="svg-container">
+          <object type="image/svg+xml" data="./img/restaurant-plan.svg" 
+            width="100%" height="100%" class="svg-content">
+            </object>
+          </div>
           <img class="reservations__plan" src="./img/restaurant-plan.png" alt="restaurant-plan">
         </div>
         <div class="col-sm-6 text-sm-left text-center">
