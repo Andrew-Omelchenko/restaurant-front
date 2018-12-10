@@ -10,6 +10,11 @@ class Reservations extends Component {
   }
 
   render() {
+    const dateNow = new Date();
+    const yearNow = dateNow.getFullYear();
+    const monthNow = dateNow.getMonth() + 1;
+    const dayOfMonthNow = dateNow.getDate();
+
     const htmlString = `
       <div class="row bg-dark text-white">
         <div class="col-sm-6 text-center">
@@ -25,9 +30,10 @@ class Reservations extends Component {
                 class="form-control" 
                 id="date" 
                 type="date"  
-                placeholder="Choose date..." 
+                min="${yearNow}-${monthNow}-${dayOfMonthNow}" 
+                max="3000-01-01" 
                 required
-                value="">
+                value="${yearNow}-${monthNow}-${dayOfMonthNow}">
             </div>
             <div class="form-group">
               <label for="table">Select table:</label>
