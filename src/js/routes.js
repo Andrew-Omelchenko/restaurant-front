@@ -5,6 +5,7 @@ import Profile from './components/Profile';
 import Home from './components/Home';
 import Dishes from './components/Dishes';
 import Drinks from './components/Drinks';
+import Reservations from './components/Reservations';
 import Geo from './components/Geo';
 
 const routes = [
@@ -36,6 +37,11 @@ const routes = [
   {
     href: '/drinks',
     component: Drinks
+  },
+  {
+    href: '/reservations',
+    component: Reservations,
+    authorized: AUTH_SERVICE.isAuthorized
   },
   {
     href: '/location',

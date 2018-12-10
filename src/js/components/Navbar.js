@@ -33,7 +33,7 @@ class Navbar extends Component {
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">RESERVATIONS</a>
+              <a class="nav-link" href="#/reservations">RESERVATIONS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#/location">LOCATE US</a>
