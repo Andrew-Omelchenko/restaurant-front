@@ -30,7 +30,6 @@ class Dishes extends Component {
         <tr>
           <th scope="col">#</th>
           <th scope="col">Item</th>
-          <th scope="col">Description</th>
           <th scope="col">Category</th>
           <th scope="col">Price</th>
         </tr>
@@ -39,10 +38,9 @@ class Dishes extends Component {
 
     this.data.forEach(elem => {
       str += `
-        <tr>
-          <th scope="row">${elem.id}</span></th>
-          <td>${elem.item}</span></td>
-          <td>${elem.description}</span></td>
+        <tr title="${elem.description}">
+          <th scope="row">${elem.id}</th>
+          <td>${elem.item}</td>
           <td>${elem.category}</td>
           <td>${elem.price}</td>
         </tr>`;
