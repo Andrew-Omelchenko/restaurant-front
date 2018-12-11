@@ -23,13 +23,6 @@ class Geo extends Component {
       
       const map = L.map('map_id').setView([MAP_API.LAT, MAP_API.LON], 13);
 
-      // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-      //   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      //   maxZoom: 18,
-      //   id: 'mapbox.streets',
-      //   accessToken: 'pk.eyJ1IjoiYW5kcmV3b200MyIsImEiOiJjanBoN3FsNXMwcjYxM3FwZm1qanM4d3NsIn0.xzCfEoXd7dyD2dMhUaElnw'
-      // }).addTo(map);
-
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);

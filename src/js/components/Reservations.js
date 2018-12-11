@@ -88,7 +88,7 @@ class Reservations extends Component {
                 value="${yearNow}-${monthNow}-${dayOfMonthNow}">
             </div>
             <div class="form-group">
-              <label for="table">Select a table: (or click on the plan)</label>
+              <label for="table">Select a table or click one on the plan:</label>
               <select 
                 name="table" 
                 class="form-control" 
