@@ -14,8 +14,6 @@ class Reservations extends Component {
   }
 
   onClick(ev) {
-    ev.preventDefault();
-
     if (ev.target.id !== '') {
       if (ev.target.id.slice(0, -1) === 'table-') {
         document.getElementById('table').value = ev.target.id.slice(-1);
