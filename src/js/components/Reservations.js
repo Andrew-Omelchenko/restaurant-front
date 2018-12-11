@@ -15,6 +15,10 @@ class Reservations extends Component {
     const monthNow = dateNow.getMonth() + 1;
     const dayOfMonthNow = dateNow.getDate();
 
+    // Thank to:
+    // https://patrickkettner.com/posts/responsive-image-maps/
+    // http://thenewcode.com/744/Make-SVG-Responsive
+
     const htmlString = `
       <div class="row bg-dark text-white">
         <div class="col-sm-6 text-center">
