@@ -15,7 +15,12 @@ class Reservations extends Component {
 
   onClick(ev) {
     ev.preventDefault();
-    console.log(ev.target.id);
+
+    if (ev.target.id !== '') {
+      if (ev.target.id.slice(0, -1) === 'table-') {
+        document.getElementById('table').value = ev.target.id.slice(-1);
+      }
+    }
   }
 
   render() {
@@ -73,7 +78,7 @@ class Reservations extends Component {
           <form class="register-form">
             <p class="text-danger" id="alert-placeholder">&nbsp</p>
             <div class="form-group">
-              <label for="date">Choose date:</label>
+              <label for="date">Choose a date:</label>
               <input 
                 name="date" 
                 class="form-control" 
@@ -85,20 +90,20 @@ class Reservations extends Component {
                 value="${yearNow}-${monthNow}-${dayOfMonthNow}">
             </div>
             <div class="form-group">
-              <label for="table">Select table:</label>
+              <label for="table">Select a table: (or click on the plan)</label>
               <select 
                 name="table" 
                 class="form-control" 
                 id="table"  
                 required
                 value="1">
-                <option value="1">#1</option>
-                <option value="2">#2</option>
-                <option value="3">#3</option>
-                <option value="4">#4</option>
-                <option value="5">#5</option>
-                <option value="6">#6</option>
-                <option value="7">#7</option>
+                <option value="1">Table #1 - 6 seats</option>
+                <option value="2">Table #2 - 7 seats</option>
+                <option value="3">Table #3 - 2 seats</option>
+                <option value="4">Table #4 - 2 seats</option>
+                <option value="5">Table #5 - 6 seats</option>
+                <option value="6">Table #6 - 3 seats</option>
+                <option value="7">Table #7 - 8 seats</option>
               </select>  
             </div>
             <button class="btn btn-primary" id="order-btn" type="submit">Submit</button>
