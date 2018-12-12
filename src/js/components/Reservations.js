@@ -33,11 +33,9 @@ class Reservations extends Component {
     ev.preventDefault();
 
     const form = document.getElementById('reservations-form');
-    const hours = Array.from(form.elements['hours'], element => {
-      if(element.checked) {
-        return element.value;
-      }
-    });
+    const hours = Array.from(form.elements['hours'])
+      .filter(element => element.checked)
+      .map(element => Number(element.value));
     console.log(hours);
   }
 
