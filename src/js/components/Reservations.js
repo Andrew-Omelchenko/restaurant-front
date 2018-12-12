@@ -34,13 +34,12 @@ class Reservations extends Component {
     };
 
     AUTH_HTTP_SERVICE.getHours(queryData)
-      .then(res => res.json())
-      .then(answer => {
+      .then(res => {
         this.updateState({
           date,
           tableId,
-          hours: diff(RESERVATIONS.HOURS, answer)
-        })
+          hours: diff(RESERVATIONS.HOURS, res.answer)
+        });
       })
       .catch(err => {
         document
