@@ -82,3 +82,10 @@ export function diff(arr1, arr2) {
     return arr2.indexOf(i) < 0;
   });
 };
+
+export function toDateSting(dateObj) {
+    const year = dateObj.getFullYear();
+    const month = dateObj.getMonth() + 1;
+    const dayOfMonth = dateObj.getDate();
+    return `${year}-${month}-${dayOfMonth}`;
+};

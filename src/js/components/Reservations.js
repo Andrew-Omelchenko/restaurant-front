@@ -1,10 +1,16 @@
 import { RESERVATIONS } from '../utils/config';
-import { bindAll, toHtml } from '../utils/helper';
+import { bindAll, toHtml, diff, toDateSting } from '../utils/helper';
 import Component from '../framework/Component';
 
 class Reservations extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      date: toDateSting(new Date()),
+      tableId: 1,
+      hours: RESERVATIONS.HOURS
+    }
 
     bindAll(this, 'onClick');
 
@@ -23,10 +29,7 @@ class Reservations extends Component {
   }
 
   render() {
-    const dateNow = new Date();
-    const yearNow = dateNow.getFullYear();
-    const monthNow = dateNow.getMonth() + 1;
-    const dayOfMonthNow = dateNow.getDate();
+    const { date, tableId, hours } = this.state;
 
     let tablesStr = '';
     let pathsStr = '';
@@ -68,10 +71,10 @@ class Reservations extends Component {
                 class="form-control" 
                 id="date" 
                 type="date"  
-                min="${yearNow}-${monthNow}-${dayOfMonthNow}" 
+                min="${date}" 
                 max="3000-01-01" 
                 required
-                value="${yearNow}-${monthNow}-${dayOfMonthNow}">
+                value="${date}">
             </div>
             <div class="form-group">
               <label for="table">Select a table or click one on the plan:</label>
@@ -80,7 +83,7 @@ class Reservations extends Component {
                 class="form-control" 
                 id="table"  
                 required
-                value="1">
+                value="${tableId}">
                 ${tablesStr}
               </select>  
             </div>
