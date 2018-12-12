@@ -12,12 +12,13 @@ class Reservations extends Component {
       hours: RESERVATIONS.HOURS
     }
 
-    bindAll(this, 'onClick');
+    bindAll(this, 'onClick', 'onSubmit');
 
     this.host = document.createElement('section');
     this.host.classList.add('container-fluid', 'reservations');
 
     this.host.addEventListener('click', this.onClick, true);
+    this.host.addEventListener('submit', this.onSubmit, true);
   }
 
   onClick(ev) {
@@ -26,6 +27,16 @@ class Reservations extends Component {
         document.getElementById('table').value = ev.target.id.slice(-1);
       }
     }
+  }
+
+  onSubmit(ev) {
+    ev.preventDefault();
+
+    const form = document.getElementById('reservations-form');
+    const hours = Array.from(form.elements['hours'])
+      .filter(element => element.checked)
+      .map(element => element.value);
+    console.log(hours);
   }
 
   render() {
@@ -49,7 +60,7 @@ class Reservations extends Component {
     } else {
       hours.forEach(element => {
         hoursStr += `
-          <label><input type="checkbox" name="hours[]" value="${element}">${element}:00</label>
+          <label><input type="checkbox" name="hours" value="${element}">${element}:00</label>
         `;
       });
     }
@@ -100,8 +111,8 @@ class Reservations extends Component {
               </select>  
             </div>
             <div class="form-group">
-              <label for="hours[]">Choose hours to reserve:</label>
-              <div class="cb-group">
+              <label for="hours">Choose hours to reserve:</label>
+              <div class="chb-group">
                 ${hoursStr}
               </div>
             </div>
