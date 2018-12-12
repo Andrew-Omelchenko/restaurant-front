@@ -43,6 +43,18 @@ class Reservations extends Component {
       `;
     });
 
+    let hoursStr = '';
+    if (hours.length === 0) {
+      hoursStr = `<p id="hours" name="hours" class="text-danger">Sorry, there are no tables available</p>`;
+    } else {
+      hours.forEach(element => {
+        hoursStr += `
+          <label><input type="checkbox" name="hours[]" value="${element}">${element}:00</label>
+        `;
+      });
+    }
+
+
     // Thank to:
     // https://patrickkettner.com/posts/responsive-image-maps/
     // http://thenewcode.com/744/Make-SVG-Responsive
@@ -62,7 +74,7 @@ class Reservations extends Component {
           </div>
         </div>
         <div class="col-sm-6 text-sm-left text-center">
-          <form class="register-form">
+          <form id="reservations-form" class="reservations-form">
             <p class="text-danger" id="alert-placeholder">&nbsp</p>
             <div class="form-group">
               <label for="date">Choose a date:</label>
@@ -86,6 +98,12 @@ class Reservations extends Component {
                 value="${tableId}">
                 ${tablesStr}
               </select>  
+            </div>
+            <div class="form-group">
+              <label for="hours[]">Choose hours to reserve:</label>
+              <div class="cb-group">
+                ${hoursStr}
+              </div>
             </div>
             <button class="btn btn-primary" id="order-btn" type="submit">Submit</button>
           </form>
