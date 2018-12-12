@@ -76,3 +76,9 @@ export function jQueryReset(table_name) {
   $(`#${table_name}`).DataTable();
   $('.dataTables_length').addClass('bs-select');
 };
+
+export function diff(arr1, arr2) {
+  return arr1.filter(function(i) {
+    return arr2.indexOf(i) < 0;
+  });
+};
