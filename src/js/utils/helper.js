@@ -89,3 +89,11 @@ export function toDateSting(dateObj) {
     const dayOfMonth = dateObj.getDate();
     return `${year}-${month}-${dayOfMonth}`;
 };
+
+export function isDateStringValid(dateStr) {
+  const date = new Date(dateStr);
+  if (date == 'Invalid Date') {
+    return false;
+  }
+  return true;
+};

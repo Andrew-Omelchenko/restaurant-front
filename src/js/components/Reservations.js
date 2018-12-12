@@ -1,8 +1,7 @@
 import { RESERVATIONS } from '../utils/config';
-import { bindAll, toHtml, diff, toDateSting } from '../utils/helper';
+import { bindAll, toHtml, diff, toDateSting, isDateStringValid } from '../utils/helper';
 import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
 import Component from '../framework/Component';
-import { timingSafeEqual } from 'crypto';
 
 class Reservations extends Component {
   constructor(props) {
