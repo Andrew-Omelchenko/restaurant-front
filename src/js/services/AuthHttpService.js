@@ -51,6 +51,24 @@ class AuthHttpService {
   createUser(userData) {
     return this.post(API.ENDPOINTS.CREATE_USER, JSON.stringify(userData));
   }
+
+  getHours(queryData) {
+    const headers = new Headers({ 'content-type': 'application/json' });
+
+    if (AUTH_SERVICE.isAuthorized()) {
+      headers.append('Authorization', `Bearer ${AUTH_SERVICE.token}`);
+    }
+
+    const init = { 
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify(queryData),
+      mode: 'cors',
+      cache: 'default' 
+    };
+
+    return fetch(`${API.BASE_URL}${API.ENDPOINTS.HOURS}`, init);
+  }
 }
 
 export const AUTH_HTTP_SERVICE = new AuthHttpService();

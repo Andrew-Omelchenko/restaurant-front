@@ -5,7 +5,8 @@ export const API = {
     LOGIN: '/signin',
     PROFILE: '/profile',
     MENU: '/menu',
-    DRINKS: '/winecard'
+    DRINKS: '/winecard',
+    HOURS: '/hours'
   }
 };
 

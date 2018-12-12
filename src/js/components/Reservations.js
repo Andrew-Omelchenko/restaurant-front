@@ -1,6 +1,8 @@
 import { RESERVATIONS } from '../utils/config';
 import { bindAll, toHtml, diff, toDateSting } from '../utils/helper';
+import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
 import Component from '../framework/Component';
+import { timingSafeEqual } from 'crypto';
 
 class Reservations extends Component {
   constructor(props) {
@@ -12,13 +14,41 @@ class Reservations extends Component {
       hours: RESERVATIONS.HOURS
     }
 
-    bindAll(this, 'onClick', 'onSubmit');
+    bindAll(this, 'reInit', 'onClick', 'onSubmit');
 
     this.host = document.createElement('section');
     this.host.classList.add('container-fluid', 'reservations');
 
     this.host.addEventListener('click', this.onClick, true);
     this.host.addEventListener('submit', this.onSubmit, true);
+
+    this.reInit();
+  }
+
+  reInit() {
+    const { date, tableId, hours } = this.state;
+
+    const queryData = {
+      tableId,
+      date
+    };
+
+    AUTH_HTTP_SERVICE.getHours(queryData)
+      .then(res => res.json())
+      .then(answer => {
+        this.updateState({
+          date,
+          tableId,
+          hours: diff(RESERVATIONS.HOURS, answer)
+        })
+      })
+      .catch(err => {
+        document
+          .getElementById('alert-placeholder')
+          .innerHTML = `Error status: ${err.status || 
+            'Server does not respond'}, ${err.answer || 
+            'check connection'}`;
+      });
   }
 
   onClick(ev) {
