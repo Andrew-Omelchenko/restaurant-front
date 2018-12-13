@@ -56,46 +56,48 @@ class Register extends Component {
   render() {
 
     return `
-      <form class="register-form">
-        <p class="text-danger" id="alert-placeholder">&nbsp</p>
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input 
-            name="username" 
-            class="form-control" 
-            id="name" 
-            type="text" 
-            minlength="2" 
-            maxlength="24" 
-            placeholder="Enter new user name..." 
-            required
-            value="">
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input 
-            name="password" 
-            class="form-control" 
-            id="password" 
-            type="password" 
-            minlength="8"
-            placeholder="Enter password..."  
-            required
-            value="">
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input 
-            name="email" 
-            class="form-control" 
-            id="email" 
-            type="email"
-            placeholder="Enter email address..." 
-            required
-            value="">
-        </div>
-        <button class="btn btn-primary" id="register-btn" type="submit">Submit</button>
-      </form>
+      <section>
+        <form class="register-form">
+          <p class="text-danger" id="alert-placeholder">&nbsp</p>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input 
+              name="username" 
+              class="form-control" 
+              id="name" 
+              type="text" 
+              minlength="2" 
+              maxlength="24" 
+              placeholder="Enter new user name..." 
+              required
+              value="">
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input 
+              name="password" 
+              class="form-control" 
+              id="password" 
+              type="password" 
+              minlength="8"
+              placeholder="Enter password..."  
+              required
+              value="">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input 
+              name="email" 
+              class="form-control" 
+              id="email" 
+              type="email"
+              placeholder="Enter email address..." 
+              required
+              value="">
+          </div>
+          <button class="btn btn-primary" id="register-btn" type="submit">Submit</button>
+        </form>
+      </section>
     `;
   }
 }

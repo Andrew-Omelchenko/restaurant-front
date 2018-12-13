@@ -149,7 +149,7 @@ class Reservations extends Component {
     // http://thenewcode.com/744/Make-SVG-Responsive
 
     const htmlString = `
-      <div class="row bg-dark text-white">
+      <section class="row bg-dark text-white">
         <div class="col-sm-6 text-center">
           <div class="svg-container">
             <img class="reservations__plan" src="${RESERVATIONS.IMAGE_STR}" alt="restaurant-plan">
@@ -202,7 +202,7 @@ class Reservations extends Component {
             </button>
           </form>
         </div>
-      </div>
+      </section>
     `;
 
     const node = toHtml(htmlString);

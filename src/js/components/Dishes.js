@@ -10,7 +10,7 @@ class Dishes extends Component {
     this.data = [];
 
     this.host = document.createElement('main');
-    this.host.classList.add('container', 'dishes');
+    this.host.classList.add('container-fluid', 'dishes');
 
     AUTH_HTTP_SERVICE.getDishes()
       .then(res => {

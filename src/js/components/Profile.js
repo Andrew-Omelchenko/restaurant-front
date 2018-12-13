@@ -14,7 +14,7 @@ class Profile extends Component {
     };
 
     this.host = document.createElement('main');
-    this.host.classList.add('profile-container');
+    this.host.classList.add('container');
     this.host.addEventListener('click', this.handleClick);
   }
 
@@ -28,10 +28,12 @@ class Profile extends Component {
     const { profile } = this.state;
 
     return `
-      <h2>Username: ${profile.name}</h2>
-      <p>E-mail: ${profile.email}</p>
-      <p>Joined: ${profile.joined}</p>
-      <button class="btn" id="home-btn" type="button">Home</button>
+      <section>
+        <h2>Username: ${profile.name}</h2>
+        <p>E-mail: ${profile.email}</p>
+        <p>Joined: ${profile.joined}</p>
+        <button class="btn" id="home-btn" type="button">Home</button>
+      </section>
     `;
   }
 }

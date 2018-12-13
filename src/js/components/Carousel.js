@@ -5,12 +5,12 @@ class Carousel extends Component {
     super(props);
 
     this.host = document.createElement('section');
-    this.host.classList.add('container-fluid');
+    this.host.classList.add('container-fluid', 'bg-dark', 'text-white');
   }
 
   render() {
     return `
-      <div class="row bg-dark text-white">
+      <div class="row">
         <div class="col-sm-8">
           <div id="demo" class="carousel slide" data-ride="carousel">
             <ul class="carousel-indicators">

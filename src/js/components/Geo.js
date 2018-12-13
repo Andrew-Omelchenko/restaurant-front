@@ -38,7 +38,7 @@ class Geo extends Component {
 
   render() {
     const htmlString = `
-      <div class="row bg-dark text-white">
+      <section class="row bg-dark text-white">
         <div class="col-sm-3 text-sm-right text-center geo__left">
           <p>OUR LOCATION</p>
           <h4>Restaurant “WELCOME”</h4>
@@ -50,7 +50,7 @@ class Geo extends Component {
         </div>
         <div class="col-sm-9 text-center" id="map_id">
         </div>
-      </div>
+      </section>
     `;
 
     const node = toHtml(htmlString);

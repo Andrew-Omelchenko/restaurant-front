@@ -46,33 +46,35 @@ class Login extends Component {
 
   render() {
     return `
-      <form class="login-form">
-        <p class="text-danger" id="alert-placeholder">&nbsp</p>
-        <div class="form-group">
-          <label for="email">E-mail: </label>
-          <input 
-            name="email"
-            class="form-control" 
-            id="email" 
-            type="email" 
-            placeholder="Enter your email..." 
-            required 
-            value="">
-        </div>
-        <div class="form-group">
-          <label for="password">Password: </label>
-          <input 
-            name="password" 
-            class="form-control" 
-            id="password" 
-            type="password" 
-            minlength="8" 
-            placeholder="Enter your password..." 
-            required 
-            value="">
-        </div>
-        <button class="btn btn-primary" id="submit-btn" type="submit">Submit</button>
-      </form>
+      <section>
+        <form class="login-form">
+          <p class="text-danger" id="alert-placeholder">&nbsp</p>
+          <div class="form-group">
+            <label for="email">E-mail: </label>
+            <input 
+              name="email"
+              class="form-control" 
+              id="email" 
+              type="email" 
+              placeholder="Enter your email..." 
+              required 
+              value="">
+          </div>
+          <div class="form-group">
+            <label for="password">Password: </label>
+            <input 
+              name="password" 
+              class="form-control" 
+              id="password" 
+              type="password" 
+              minlength="8" 
+              placeholder="Enter your password..." 
+              required 
+              value="">
+          </div>
+          <button class="btn btn-primary" id="submit-btn" type="submit">Submit</button>
+        </form>
+      </section>
     `;
   }
 }
