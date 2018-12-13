@@ -136,7 +136,10 @@ class Reservations extends Component {
     } else {
       hours.forEach(element => {
         hoursStr += `
-          <label><input type="checkbox" name="hours" value="${element}">${element}:00</label>
+          <div class="custom-control custom-checkbox custom-control-inline">
+            <input type="checkbox" class="custom-control-input" name="hours" id="hours-${element}" value="${element}">
+            <label class="custom-control-label" for="hours-${element}">${element}:00</label>
+          </div>
         `;
       });
     }
