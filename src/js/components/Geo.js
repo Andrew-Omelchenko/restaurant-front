@@ -43,6 +43,9 @@ class Geo extends Component {
           <p>OUR LOCATION</p>
           <h4>Restaurant “WELCOME”</h4>
           <p>Vinnytsia, Unknown str, 61</p>
+          <p>Everyday.</p>
+          <p>From dusk till dawn.</p>
+          <p>For you!</p>
           <button class="btn" id="btn-live" type="button">LIVE MAP</Button>
         </div>
         <div class="col-sm-9 text-center" id="map_id">
