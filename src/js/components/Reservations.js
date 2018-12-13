@@ -1,5 +1,6 @@
 import { RESERVATIONS } from '../utils/config';
 import { bindAll, toHtml, diff, toDateSting, isDateStringValid } from '../utils/helper';
+import { AUTH_SERVICE } from '../services/AuthService';
 import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
 import Component from '../framework/Component';
 
@@ -85,6 +86,33 @@ class Reservations extends Component {
       .filter(element => element.checked)
       .map(element => Number(element.value));
     console.log(hours);
+
+    if (isDateStringValid(form.date.value)) {
+      const requestData = {
+        email: AUTH_SERVICE.claims.email, 
+        tableId: form.table.value, 
+        date: form.date.value, 
+        hours
+      };
+
+      AUTH_HTTP_SERVICE.reserveHours(requestData)
+        .then(res => {
+          console.log(res.answer);
+          this.reInit(form.date.value, form.table.value);
+        })
+        .catch(err => {
+          document
+            .getElementById('alert-placeholder')
+            .innerHTML = `Error status: ${err.status || 
+              'Server does not respond'}, ${err.answer || 
+              'check connection'}`;
+          const button = document.getElementById('order-btn');
+          button.setAttribute('disabled', true);
+          button.classList.remove('btn-primary');
+          button.classList.remove('btn-disabled');
+          button.classList.add('btn-disabled');
+        });
+    }
   }
 
   render() {
@@ -163,7 +191,12 @@ class Reservations extends Component {
                 ${hoursStr}
               </div>
             </div>
-            <button class="btn ${disabled ? 'btn-disabled' : 'btn-primary'}" id="order-btn" type="submit" ${disabled ? 'disabled' : ''}">Submit</button>
+            <button 
+              class="btn ${disabled ? 'btn-disabled' : 'btn-primary'}" 
+              id="order-btn" 
+              type="submit" ${disabled ? 'disabled' : ''}">
+              Submit
+            </button>
           </form>
         </div>
       </div>

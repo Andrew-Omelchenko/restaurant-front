@@ -6,7 +6,8 @@ export const API = {
     PROFILE: '/profile',
     MENU: '/menu',
     DRINKS: '/winecard',
-    HOURS: '/hours'
+    HOURS: '/hours',
+    RESERVE: '/reserve'
   }
 };
 
