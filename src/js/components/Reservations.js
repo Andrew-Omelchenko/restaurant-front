@@ -87,7 +87,7 @@ class Reservations extends Component {
       .map(element => Number(element.value));
     console.log(hours);
 
-    if (isDateStringValid(form.date.value)) {
+    if (isDateStringValid(form.date.value) && hours.length > 0) {
       const requestData = {
         email: AUTH_SERVICE.claims.email, 
         tableId: form.table.value, 
