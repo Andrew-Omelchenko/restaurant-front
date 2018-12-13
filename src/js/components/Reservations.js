@@ -13,20 +13,19 @@ class Reservations extends Component {
       hours: RESERVATIONS.HOURS
     }
 
-    bindAll(this, 'reInit', 'onClick', 'onSubmit');
+    bindAll(this, 'reInit', 'onClick', 'onChange', 'onSubmit');
 
     this.host = document.createElement('section');
     this.host.classList.add('container-fluid', 'reservations');
 
     this.host.addEventListener('click', this.onClick, true);
+    this.host.addEventListener('change', this.onChange, true);
     this.host.addEventListener('submit', this.onSubmit, true);
 
-    this.reInit();
+    this.reInit(this.state.date, this.state.tableId);
   }
 
-  reInit() {
-    const { date, tableId, hours } = this.state;
-
+  reInit(date, tableId) {
     const queryData = {
       tableId,
       date
@@ -39,6 +38,7 @@ class Reservations extends Component {
           tableId,
           hours: diff(RESERVATIONS.HOURS, res.answer.map(element => element.reserved_hour))
         });
+        document.getElementById('table').value = tableId;
       })
       .catch(err => {
         document
@@ -54,6 +54,15 @@ class Reservations extends Component {
       if (ev.target.id.slice(0, -1) === 'table-') {
         document.getElementById('table').value = ev.target.id.slice(-1);
       }
+    }
+  }
+
+  onChange(ev) {
+    if (ev.target.id === 'date' || ev.target.id === 'table') {
+      this.reInit(
+        document.getElementById('date').value,
+        Number(document.getElementById('table').value)
+      );
     }
   }
 
@@ -93,7 +102,6 @@ class Reservations extends Component {
       });
     }
 
-
     // Thank to:
     // https://patrickkettner.com/posts/responsive-image-maps/
     // http://thenewcode.com/744/Make-SVG-Responsive
@@ -122,7 +130,7 @@ class Reservations extends Component {
                 class="form-control" 
                 id="date" 
                 type="date"  
-                min="${date}" 
+                min="${toDateSting(new Date())}" 
                 max="3000-01-01" 
                 required
                 value="${date}">
