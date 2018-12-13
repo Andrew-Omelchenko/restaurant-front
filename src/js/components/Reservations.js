@@ -10,7 +10,8 @@ class Reservations extends Component {
     this.state = {
       date: toDateSting(new Date()),
       tableId: 1,
-      hours: RESERVATIONS.HOURS
+      hours: RESERVATIONS.HOURS,
+      disabled: true
     }
 
     bindAll(this, 'reInit', 'onClick', 'onChange', 'onSubmit');
@@ -36,7 +37,8 @@ class Reservations extends Component {
         this.updateState({
           date,
           tableId,
-          hours: diff(RESERVATIONS.HOURS, res.answer.map(element => element.reserved_hour))
+          hours: diff(RESERVATIONS.HOURS, res.answer.map(element => element.reserved_hour)),
+          disabled: false
         });
         document.getElementById('table').value = tableId;
       })
@@ -46,6 +48,11 @@ class Reservations extends Component {
           .innerHTML = `Error status: ${err.status || 
             'Server does not respond'}, ${err.answer || 
             'check connection'}`;
+        const button = document.getElementById('order-btn');
+        button.setAttribute('disabled', true);
+        button.classList.remove('btn-primary');
+        button.classList.remove('btn-disabled');
+        button.classList.add('btn-disabled');
       });
   }
 
@@ -81,7 +88,7 @@ class Reservations extends Component {
   }
 
   render() {
-    const { date, tableId, hours } = this.state;
+    const { date, tableId, hours, disabled } = this.state;
 
     let tablesStr = '';
     let pathsStr = '';
@@ -156,7 +163,7 @@ class Reservations extends Component {
                 ${hoursStr}
               </div>
             </div>
-            <button class="btn btn-primary" id="order-btn" type="submit">Submit</button>
+            <button class="btn ${disabled ? 'btn-disabled' : 'btn-primary'}" id="order-btn" type="submit" ${disabled ? 'disabled' : ''}">Submit</button>
           </form>
         </div>
       </div>
