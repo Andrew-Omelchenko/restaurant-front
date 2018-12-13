@@ -5,7 +5,7 @@ class Carousel extends Component {
     super(props);
 
     this.host = document.createElement('section');
-    this.host.classList.add('container-flex');
+    this.host.classList.add('container-fluid');
   }
 
   render() {
