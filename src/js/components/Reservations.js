@@ -53,6 +53,10 @@ class Reservations extends Component {
     if (ev.target.id !== '') {
       if (ev.target.id.slice(0, -1) === 'table-') {
         document.getElementById('table').value = ev.target.id.slice(-1);
+        this.reInit(
+          document.getElementById('date').value,
+          Number(document.getElementById('table').value)
+        );
       }
     }
   }
