@@ -37,7 +37,7 @@ class Reservations extends Component {
         this.updateState({
           date,
           tableId,
-          hours: diff(RESERVATIONS.HOURS, res.answer)
+          hours: diff(RESERVATIONS.HOURS, res.answer.map(element => element.reserved_hour))
         });
       })
       .catch(err => {
