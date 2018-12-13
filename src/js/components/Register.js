@@ -9,7 +9,7 @@ class Register extends Component {
       options: ''
     };
 
-    this.host = document.createElement('div');
+    this.host = document.createElement('main');
     this.host.classList.add('container');
 
     this.host.addEventListener('focus', this.handleFocus, true);

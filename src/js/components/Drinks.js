@@ -9,7 +9,7 @@ class Drinks extends Component {
 
     this.data = [];
 
-    this.host = document.createElement('section');
+    this.host = document.createElement('main');
     this.host.classList.add('container', 'drinks');
 
     AUTH_HTTP_SERVICE.getDrinks()

@@ -13,7 +13,7 @@ class Profile extends Component {
       }
     };
 
-    this.host = document.createElement('div');
+    this.host = document.createElement('main');
     this.host.classList.add('profile-container');
     this.host.addEventListener('click', this.handleClick);
   }

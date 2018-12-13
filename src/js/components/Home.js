@@ -7,7 +7,7 @@ class Home extends Component {
 
     this.carousel = new Carousel();
 
-    this.host = document.createElement('div');
+    this.host = document.createElement('main');
     this.host.classList.add('home-content');
   }
 

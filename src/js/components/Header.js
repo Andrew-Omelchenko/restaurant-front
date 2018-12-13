@@ -9,7 +9,7 @@ class Header extends Component {
     super(props);
 
     this.host = document.createElement('header');
-    this.host.classList.add('header');
+    this.host.classList.add('header', 'fixed-top');
     // this.host.classList.add('fixed-top');
 
     this.clock = new Clock();

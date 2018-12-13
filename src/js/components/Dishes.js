@@ -9,7 +9,7 @@ class Dishes extends Component {
 
     this.data = [];
 
-    this.host = document.createElement('section');
+    this.host = document.createElement('main');
     this.host.classList.add('container', 'dishes');
 
     AUTH_HTTP_SERVICE.getDishes()

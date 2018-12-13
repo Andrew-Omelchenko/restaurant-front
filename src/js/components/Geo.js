@@ -13,7 +13,7 @@ class Geo extends Component {
     //   }
     // };
 
-    this.host = document.createElement('section');
+    this.host = document.createElement('main');
     this.host.classList.add('container-fluid', 'geo');
     this.host.addEventListener('click', this.goLive);
   }

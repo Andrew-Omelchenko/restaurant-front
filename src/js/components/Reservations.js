@@ -17,7 +17,7 @@ class Reservations extends Component {
 
     bindAll(this, 'reInit', 'onClick', 'onChange', 'onSubmit');
 
-    this.host = document.createElement('section');
+    this.host = document.createElement('main');
     this.host.classList.add('container-fluid', 'reservations');
 
     this.host.addEventListener('click', this.onClick, true);

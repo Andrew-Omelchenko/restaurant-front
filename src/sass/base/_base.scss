@@ -1,19 +1,33 @@
 /* CSS reset */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
+// *,
+// *::before,
+// *::after {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: inherit;
+// }
 
 html {
-    /* Root font size - 10px by default */
-    // font-size: 62.5%;
+  /* Root font size - 10px by default */
+  // font-size: 62.5%;
 }
 
-body {
-    box-sizing: border-box;
+// body {
+//   box-sizing: border-box;   
+// }
+
+header {
+  background-color: $color-white;
+}
+
+main {
+  padding-top: 18.25rem;
+}
+  
+@media (min-width: 576px) {
+  main {
+    padding-top: 10.78rem;
+  }
 }
 
 // ul {
