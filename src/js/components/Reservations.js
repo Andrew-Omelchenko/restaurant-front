@@ -1,5 +1,5 @@
 import { RESERVATIONS } from '../utils/config';
-import { bindAll, toHtml, diff, toDateSting, isDateStringValid } from '../utils/helper';
+import { bindAll, toHtml, align2, diff, toDateSting, isDateStringValid } from '../utils/helper';
 import { AUTH_SERVICE } from '../services/AuthService';
 import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
 import Component from '../framework/Component';
@@ -138,7 +138,7 @@ class Reservations extends Component {
         hoursStr += `
           <div class="custom-control custom-checkbox custom-control-inline">
             <input type="checkbox" class="custom-control-input" name="hours" id="hours-${element}" value="${element}">
-            <label class="custom-control-label" for="hours-${element}">${element}:00</label>
+            <label class="custom-control-label" for="hours-${element}">${align2(element)}:00</label>
           </div>
         `;
       });
