@@ -28,10 +28,12 @@ class Featured extends Component {
     });
 
     const htmlString = `
-      <h3 class="text-sm-left text-center">Featured dishes</h3>
-      <div class="row text-center">
-        ${dishesStr}
-      </div>
+      <section>
+        <h3 class="text-sm-left text-center">Featured dishes</h3>
+        <div class="row text-center">
+          ${dishesStr}
+        </div>
+      </section>
     `;
 
     const node = toHtml(htmlString);
