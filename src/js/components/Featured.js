@@ -14,11 +14,16 @@ class Featured extends Component {
     let dishesStr = '';
     FEAT_ARR.forEach(element => {
       dishesStr += `
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <span class="d-block mb-4 h-100">
+        <figure class="col-lg-3 col-md-4 col-xs-6 shadow">
+          <figcaption class="figure-caption font-weight-bold">${element.TITLE}</figcaption>
+          <div class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" src="${element.IMAGE}" alt="${element.TITLE}">
-          </span>
-        </div>
+            <p><small>${element.DESCRIPTION}</small></p>
+            <p class="font-weight-bold">
+              Price: $${element.PRICE.toFixed(2)}
+            </p>
+          </div>
+        </figure>
       `;
     });
 

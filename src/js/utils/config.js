@@ -70,133 +70,133 @@ export const FEAT_ARR = [
     ID: 0,
     IMAGE: './img/feat-barbecue.jpg',
     TITLE: 'Barbecue',
-    DESCRIPTION: '',
+    DESCRIPTION: `The Great American Barbecue Bucket List.`,
     PRICE: 18.00
   },
   {
     ID: 1,
     IMAGE: './img/feat-fish-supper.jpg',
     TITLE: 'Fish Supper',
-    DESCRIPTION: '',
+    DESCRIPTION: 'The Special Fish Supper is SPECIAL.',
     PRICE: 21.00
   },
   {
     ID: 2,
     IMAGE: './img/feat-fruit-salad.jpg',
     TITLE: 'Fruit Salad',
-    DESCRIPTION: '',
+    DESCRIPTION: 'A very very good fresh fruit salad.',
     PRICE: 8.00
   },
   {
-    ID: 4,
+    ID: 3,
     IMAGE: './img/feat-ham.jpg',
     TITLE: 'Ham',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Top Secret Restaurant Recipes.',
     PRICE: 17.00
   },
   {
-    ID: 5,
+    ID: 4,
     IMAGE: './img/feat-hamburger.jpg',
     TITLE: 'Hamburger',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Burgers of Every Description.',
     PRICE: 7.00
+  },
+  {
+    ID: 5,
+    IMAGE: './img/feat-meat-loaf.jpg',
+    TITLE: 'Meat Loaf',
+    DESCRIPTION: 'You can learn a lot about a restaurant by how it makes its meatloaf.',
+    PRICE: 19.00
   },
   {
     ID: 6,
-    IMAGE: './img/feat-meat-loaf.jpg',
-    TITLE: 'Meat Loaf',
-    DESCRIPTION: '',
-    PRICE: 19.00
-  },
-  {
-    ID: 7,
     IMAGE: './img/feat-rice-1.jpg',
     TITLE: 'Rice - Recipe #1',
-    DESCRIPTION: '',
+    DESCRIPTION: 'White Steamed Rice.',
     PRICE: 10.00
   },
   {
-    ID: 8,
+    ID: 7,
     IMAGE: './img/feat-rice-2.jpg',
     TITLE: 'Rice - Recipe #2',
-    DESCRIPTION: '',
-    PRICE: 9.00
+    DESCRIPTION: 'Menu of Fish Curry Rice.',
+    PRICE: 12.00
   },
   {
-    ID: 9,
+    ID: 8,
     IMAGE: './img/feat-risotto.jpg',
     TITLE: 'Risotto',
-    DESCRIPTION: '',
+    DESCRIPTION: 'A Classic Risotto Recipe.',
     PRICE: 14.00
   },
   {
-    ID: 10,
+    ID: 9,
     IMAGE: './img/feat-salad-1.jpg',
     TITLE: 'Salad - Recipe #1',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Salad.',
     PRICE: 7.00
   },
   {
-    ID: 11,
+    ID: 10,
     IMAGE: './img/feat-salad-2.jpg',
     TITLE: 'Salad - Recipe #2',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Salad.',
     PRICE: 5.00
   },
   {
-    ID: 12,
+    ID: 11,
     IMAGE: './img/feat-salad-3.jpg',
     TITLE: 'Salad - Recipe #3',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Salad.',
     PRICE: 6.00
   },
   {
-    ID: 13,
+    ID: 12,
     IMAGE: './img/feat-salad-4.jpg',
     TITLE: 'Salad - Recipe #4',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Salad',
     PRICE: 5.00
   },
   {
-    ID: 14,
+    ID: 13,
     IMAGE: './img/feat-sashimi.jpg',
     TITLE: 'Sashimi',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Fresh! One of the best sashimi.',
     PRICE: 23.00
   },
   {
-    ID: 15,
+    ID: 14,
     IMAGE: './img/feat-schnitzel.jpg',
     TITLE: 'Schnitzel',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Authentic German Schnitzel (Schweineschnitzel).',
     PRICE: 25.00
   },
   {
-    ID: 16,
+    ID: 15,
     IMAGE: './img/feat-steak.jpg',
     TITLE: 'Steak',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Steak Menu.',
     PRICE: 21.00
   },
   {
-    ID: 17,
+    ID: 16,
     IMAGE: './img/feat-sushi.jpg',
     TITLE: 'Sushi',
-    DESCRIPTION: '',
+    DESCRIPTION: 'The Different Kinds of Sushi.',
     PRICE: 19.00
   },
   {
-    ID: 18,
+    ID: 17,
     IMAGE: './img/feat-tuna.jpg',
     TITLE: 'Tuna',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Ahi Tuna Ceviche.',
     PRICE: 27.00
   },
   {
-    ID: 19,
+    ID: 18,
     IMAGE: './img/feat-vegetables.jpg',
     TITLE: 'Vegetables - Mix',
-    DESCRIPTION: '',
+    DESCRIPTION: 'Mix of Vegetables.',
     PRICE: 8.00
   }
 ];
