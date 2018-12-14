@@ -14,7 +14,7 @@ class Featured extends Component {
     let dishesStr = '';
     FEAT_ARR.forEach(element => {
       dishesStr += `
-        <figure class="col-lg-3 col-md-4 col-xs-6 shadow">
+        <figure class="col-lg-3 col-md-4 col-sm-6 shadow">
           <figcaption class="figure-caption font-weight-bold">${element.TITLE}</figcaption>
           <div class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" src="${element.IMAGE}" alt="${element.TITLE}">
