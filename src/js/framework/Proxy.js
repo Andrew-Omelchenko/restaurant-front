@@ -1,6 +1,5 @@
 import Component from './Component';
 import Header from '../components/Header';
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 class Proxy extends Component {
@@ -8,7 +7,6 @@ class Proxy extends Component {
     super(props);
 
     this.header = new Header();
-    this.navbar = new Navbar();
     this.component = component;
     this.footer = new Footer();
 
