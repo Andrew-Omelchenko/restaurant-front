@@ -3,6 +3,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Profile from './components/Profile';
 import Home from './components/Home';
+import Featured from './components/Featured';
 import Dishes from './components/Dishes';
 import Drinks from './components/Drinks';
 import Reservations from './components/Reservations';
@@ -29,6 +30,10 @@ const routes = [
     href: '/profile',
     component: Profile,
     authorized: AUTH_SERVICE.isAuthorized
+  },
+  {
+    href: '/featured',
+    component: Featured
   },
   {
     href: '/dishes',

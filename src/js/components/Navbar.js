@@ -26,7 +26,7 @@ class Navbar extends Component {
                 MENU
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">FEATURED</a>
+                <a class="dropdown-item" href="#/featured">FEATURED</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#/dishes">FOOD</a>
                 <a class="dropdown-item" href="#/drinks">DRINK</a>

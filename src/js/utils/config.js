@@ -65,7 +65,7 @@ export const RESERVATIONS = {
   HOURS: [ 0, 1, 2, 18, 19, 20, 21, 22, 23]
 };
 
-export const FEATURED = [
+export const FEAT_ARR = [
   {
     ID: 0,
     IMAGE: './img/feat-barbecue.jpg',
@@ -86,13 +86,6 @@ export const FEATURED = [
     TITLE: 'Fruit Salad',
     DESCRIPTION: '',
     PRICE: 8.00
-  },
-  {
-    ID: 3,
-    IMAGE: './img/feat-fruit.jpg',
-    TITLE: 'Fruit',
-    DESCRIPTION: '',
-    PRICE: 5.00
   },
   {
     ID: 4,
@@ -166,8 +159,8 @@ export const FEATURED = [
   },
   {
     ID: 14,
-    IMAGE: './img/feat-sahimi.jpg',
-    TITLE: 'Sahimi',
+    IMAGE: './img/feat-sashimi.jpg',
+    TITLE: 'Sashimi',
     DESCRIPTION: '',
     PRICE: 23.00
   },
