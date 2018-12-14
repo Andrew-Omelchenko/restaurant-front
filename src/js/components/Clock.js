@@ -1,3 +1,4 @@
+import { align2 } from '../utils/helper';
 import Component from '../framework/Component';
 
 class Clock extends Component {
@@ -5,20 +6,13 @@ class Clock extends Component {
     super(props);
 
     this.state = {
-      time: '00:00:00'
+      time: `${getCurrentTime()}`
     };
-    
-    function align(smth) {
-      if ( smth < 10) {
-          return `0${smth.toString()}`;
-      }
-      return smth.toString();
-    }
     
     function getCurrentTime() {
       const current = new Date();
       return `
-          ${align(current.getHours())}:${align(current.getMinutes())}:${align(current.getSeconds())}
+          ${align2(current.getHours())}:${align2(current.getMinutes())}:${align2(current.getSeconds())}
           `;
     }
 
