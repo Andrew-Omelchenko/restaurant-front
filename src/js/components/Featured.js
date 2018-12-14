@@ -7,7 +7,7 @@ class Featured extends Component {
     super(props);
 
     this.host = document.createElement('main');
-    this.host.classList.add('container');
+    this.host.classList.add('container-fluid');
   }
 
   render() {
