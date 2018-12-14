@@ -41,7 +41,7 @@ class Geo extends Component {
       <section class="row bg-dark text-white">
         <div class="col-sm-3 text-sm-right text-center geo__left">
           <p>OUR LOCATION</p>
-          <h4>Restaurant “WELCOME”</h4>
+          <h4>Restaurant WELCOME</h4>
           <p>Vinnytsia, Unknown str, 61</p>
           <p>Everyday.</p>
           <p>From dusk till dawn.</p>
@@ -49,6 +49,7 @@ class Geo extends Component {
           <button class="btn" id="btn-live" type="button">LIVE MAP</Button>
         </div>
         <div class="col-sm-9 text-center" id="map_id">
+          <img class="img-fluid" src="./img/facade.jpg" alt="facade">
         </div>
       </section>
     `;
