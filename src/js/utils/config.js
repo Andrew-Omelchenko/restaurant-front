@@ -13,6 +13,15 @@ export const API = {
   IMAGES: '/static/images/'
 };
 
+export const SEARCH_ROOTS = [
+  '/',
+  '/featured',
+  '/dishes',
+  '/drinks',
+  '/location',
+  '/events'
+];
+
 export const MAP_API = {
   LAT: 49.224908799999994,
   LON: 28.401664
