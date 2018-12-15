@@ -32,7 +32,7 @@ class Search extends Component {
 
     const form = document.getElementById('search-form');
     this.searchText = form.search.value;
-    console.log(searchText);
+    console.log(this.searchText);
   }
 
   render() {
