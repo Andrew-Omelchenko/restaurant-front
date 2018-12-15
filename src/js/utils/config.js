@@ -9,7 +9,8 @@ export const API = {
     HOURS: '/hours',
     RESERVE: '/reserve',
     EVENTS: '/events'
-  }
+  },
+  IMAGES: '/static/images/'
 };
 
 export const MAP_API = {

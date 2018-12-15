@@ -1,3 +1,4 @@
+import { API } from '../utils/config';
 import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
 import { toHtml } from '../utils/helper';
 import Component from '../framework/Component';
@@ -30,7 +31,16 @@ class Events extends Component {
     let eventsStr = '';
 
     this.data.forEach(element => {
-      eventsStr += ``;
+      eventsStr += `
+        <div class="card">
+          <img class="card-img-right" src="${API.BASE_URL}${API.IMAGES}${element.image}" alt="${element.event}">
+          <div class="card-body">
+            <h5 class="card-title">${element.event}</h5>
+            <p class="card-text">${element.description}</p>
+            <p class="card-text font-weight-bold">Starts: ${element.date} at ${element.time}</p>
+          </div>
+        </div>
+      `;
     });
 
     const htmlString = `
