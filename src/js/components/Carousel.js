@@ -24,7 +24,7 @@ class Carousel extends Component {
                 <div class="carousel-caption">
                   <h3>Rest with Your Friends</h3>
                   <p>Have a great time!</p>
-                  <a href="#" class="btn btn-outline-success">ORDER</a>
+                  <a href="tel:+442074057686" class="btn btn-outline-success">ORDER</a>
                 </div>   
               </div>
               <div class="carousel-item">
@@ -32,7 +32,7 @@ class Carousel extends Component {
                 <div class="carousel-caption">
                   <h3>Table Reservation</h3>
                   <p>Entertainment Activities!</p>
-                  <a href="#" class="btn btn-outline-success">RESERVE</a>
+                  <a href="#/reservations" class="btn btn-outline-success">RESERVE</a>
                 </div>   
               </div>
               <div class="carousel-item">
@@ -40,7 +40,7 @@ class Carousel extends Component {
                 <div class="carousel-caption">
                   <h3>Great Cooking</h3>
                   <p>We love you!</p>
-                  <a href="#" class="btn btn-outline-success">MENU</a>
+                  <a href="#/featured" class="btn btn-outline-success">MENU</a>
                 </div>   
               </div>
             </div>
