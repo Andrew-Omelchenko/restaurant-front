@@ -2,6 +2,7 @@ import { AUTH_SERVICE } from './services/AuthService';
 import Login from './components/Login';
 import Register from './components/Register';
 import Profile from './components/Profile';
+import Search from './components/Search';
 import Home from './components/Home';
 import Featured from './components/Featured';
 import Dishes from './components/Dishes';
@@ -31,6 +32,10 @@ const routes = [
     href: '/profile',
     component: Profile,
     authorized: AUTH_SERVICE.isAuthorized
+  },
+  {
+    href: '/search',
+    component: Search
   },
   {
     href: '/featured',
