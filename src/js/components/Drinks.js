@@ -40,7 +40,7 @@ class Drinks extends Component {
 
     this.data.forEach(elem => {
       str += `
-        <tr>
+        <tr name="drink-${elem.id}">
           <th scope="row">${elem.id}</th>
           <td>${elem.item}</td>
           <td>${elem.category}</td>
@@ -54,6 +54,7 @@ class Drinks extends Component {
     
     const table = document.createElement('table');
     table.setAttribute('id', 'table_id');
+    table.setAttribute('name', 'drinks');
     table.classList.add('table', 'table-sm', 'table-striped');
     table.innerHTML = str;
     jQueryReset('table_id');

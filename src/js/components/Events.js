@@ -39,7 +39,7 @@ class Events extends Component {
             Featured
           </div>
           <img class="card-img-top" src="${API.BASE_URL}${API.IMAGES}${element.image}" alt="${element.event}">
-          <div class="card-body">
+          <div class="card-body" name="event-${element.id}">
             <h5 class="card-title">${element.event}</h5>
             <p class="card-text">${element.description}</p>
             <p class="card-text font-weight-bold">Starts: ${element.date} at ${element.time}</p>
@@ -49,7 +49,7 @@ class Events extends Component {
     });
 
     const htmlString = `
-      <section>
+      <section name="events">
         <h3 class="text-sm-left text-center">Our Events</h3>
         <p class="text-danger" id="alert-placeholder">&nbsp</p>
         <div class="row text-center">

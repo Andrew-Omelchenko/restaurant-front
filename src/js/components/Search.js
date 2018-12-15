@@ -1,4 +1,4 @@
-import { bindAll, toHtml } from '../utils/helper';
+import { bindAll, toHtml, processNode } from '../utils/helper';
 import routes from '../routes';
 import Component from '../framework/Component';
 
@@ -36,7 +36,8 @@ class Search extends Component {
     this.readyCount++;
     // if all async queries are finished...
     if (this.readyCount === this.asyncCount) {
-      this.structure.forEach(el => console.log(el.value.textContent));
+      // this.structure.forEach(el => console.log(el.value.textContent));
+      console.log(processNode(this.structure[2].value));
     }
   }
 

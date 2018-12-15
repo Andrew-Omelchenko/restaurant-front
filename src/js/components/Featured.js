@@ -14,7 +14,7 @@ class Featured extends Component {
     let dishesStr = '';
     FEAT_ARR.forEach(element => {
       dishesStr += `
-        <figure class="col-lg-3 col-md-4 col-sm-6 shadow">
+        <figure class="col-lg-3 col-md-4 col-sm-6 shadow" name="${element.TITLE}">
           <figcaption class="figure-caption font-weight-bold">${element.TITLE}</figcaption>
           <div class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" src="${element.IMAGE}" alt="${element.TITLE}">
@@ -28,7 +28,7 @@ class Featured extends Component {
     });
 
     const htmlString = `
-      <section>
+      <section name="featured">
         <h3 class="text-sm-left text-center">Featured dishes</h3>
         <div class="row text-center">
           ${dishesStr}

@@ -90,3 +90,19 @@ export function gather(data) {
   const event = new CustomEvent('gather', { 'detail': data });
   document.dispatchEvent(event);
 };
+
+export function processNode(node) {
+  const elements = node.getElementsByTagName("*");
+  return Array.from(elements)
+    .filter(element => 
+      element.nodeName !== 'SECTION' && 
+      element.nodeName !== 'TABLE' && 
+      element.getAttribute('name'))
+    .map(element => {
+      return {
+        tag: element.nodeName,
+        name: element.getAttribute('name'),
+        text: element.textContent.replace(/\s+/g, ' ')
+      };
+    });
+}
