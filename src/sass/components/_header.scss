@@ -18,5 +18,15 @@
     #clock-placeholder {
       display: inline-block;
     }
+
+    .navbar-nav {
+      &:first-child a {
+        border-right: 1px dotted gray;
+        border-left: 1px dotted gray;
+      }
+      &:not(:first-child) a {
+        border-right: 1px dotted gray;
+      }
+    }
   }
 }
