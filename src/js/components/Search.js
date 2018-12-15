@@ -1,5 +1,6 @@
 import { bindAll, toHtml } from '../utils/helper';
 import { SEARCH_ROOTS } from '../utils/config';
+import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
 import Component from '../framework/Component';
 
 class Search extends Component {
@@ -8,6 +9,7 @@ class Search extends Component {
 
     this.searchText = '';
     this.searchData = [];
+    this.texts = [];
 
     bindAll(this, 'onSubmit');
 
@@ -17,19 +19,38 @@ class Search extends Component {
     this.host.addEventListener('submit', this.onSubmit, true);
   }
 
+  _getHtmlText() {
+    return AUTH_HTTP_SERVICE.get(`${url}`);
+  }
+
   onSubmit(ev) {
     ev.preventDefault();
 
     const form = document.getElementById('search-form');
     this.searchText = form.search.value;
-    const urlBase = `${window.location.protocol}//${window.location.pathname}`;
+    console.log(window.location);
     this.searchData = SEARCH_ROOTS.map(element => {
       return {
-        url: `${urlBase}${element}`,
+        url: `${window.location.origin}/#${element}`,
         htmlString: ''
       };
     });
     console.log(this.searchData);
+    // creates array of promises
+    const headers = new Headers({ 'content-type': 'text/html' });
+    const init = { 
+      method: 'GET',
+      headers: headers,
+      mode: 'cors',
+      cache: 'default' 
+    };
+
+    const promises = this.searchData.map(element => fetch(`${element.url}`, init));
+    Promise.all(promises).then(values => { 
+      values.forEach(value => {
+        console.log(value.text());
+      });
+    });
   }
 
   render() {
