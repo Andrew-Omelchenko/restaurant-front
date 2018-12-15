@@ -18,7 +18,8 @@ const routes = [
   },
   {
     href: '/',
-    component: Home
+    component: Home,
+    searchable: true
   },
   {
     href: '/login',
@@ -39,15 +40,18 @@ const routes = [
   },
   {
     href: '/featured',
-    component: Featured
+    component: Featured,
+    searchable: true
   },
   {
     href: '/dishes',
-    component: Dishes
+    component: Dishes,
+    searchable: true
   },
   {
     href: '/drinks',
-    component: Drinks
+    component: Drinks,
+    searchable: true
   },
   {
     href: '/reservations',
@@ -60,7 +64,8 @@ const routes = [
   },
   {
     href: '/events',
-    component: Events
+    component: Events,
+    searchable: true
   },
   {
     href: '/logout',
