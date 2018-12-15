@@ -18,7 +18,11 @@
     #clock-placeholder {
       display: inline-block;
     }
+  }
+}
 
+@media (min-width: 992px) {
+  .header {
     .navbar-nav {
       &:first-child a {
         border-right: 1px dotted gray;
