@@ -1,3 +1,4 @@
+import { gather } from '../utils/helper';
 import Component from '../framework/Component';
 import Carousel from './Carousel';
 

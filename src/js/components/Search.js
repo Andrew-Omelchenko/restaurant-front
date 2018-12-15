@@ -1,30 +1,43 @@
 import { bindAll, toHtml } from '../utils/helper';
 import routes from '../routes';
 import Component from '../framework/Component';
-import { runInContext } from 'vm';
 
 class Search extends Component {
   constructor(props) {
     super(props);
 
     this.searchText = '';
+    // number of ready async queries
+    this.readyCount = 0;
+    // total number of async queries in structure
+    this.asyncCount = 3;
     
     this.structure = routes
       .filter(route => route.searchable)
       .map(route => {
         return {
           href: route.href,
-          value: new route.component({}).update({})
+          value: new route.component({}).update({}) // async in its nature
         };
       });
-      console.log(this.structure);
+      // this.structure.forEach(el => console.log(el.value.textContent));
 
-    bindAll(this, 'onSubmit');
+    bindAll(this, 'onSubmit', 'onGather');
 
     this.host = document.createElement('main');
     this.host.classList.add('container-fluid');
 
     this.host.addEventListener('submit', this.onSubmit, true);
+    document.removeEventListener('gather', this.onGather, true);
+    document.addEventListener('gather', this.onGather, true);
+  }
+
+  onGather(ev) {
+    this.readyCount++;
+    // if all async queries are finished...
+    if (this.readyCount === this.asyncCount) {
+      this.structure.forEach(el => console.log(el.value.textContent));
+    }
   }
 
   onSubmit(ev) {

@@ -1,5 +1,5 @@
 import { FEAT_ARR } from '../utils/config';
-import { bindAll, toHtml } from '../utils/helper';
+import { bindAll, toHtml, gather } from '../utils/helper';
 import Component from '../framework/Component';
 
 class Featured extends Component {

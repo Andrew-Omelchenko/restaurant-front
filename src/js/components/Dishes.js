@@ -1,4 +1,4 @@
-import { jQueryReset } from '../utils/helper';
+import { jQueryReset, gather } from '../utils/helper';
 
 import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
 import Component from '../framework/Component';
@@ -18,9 +18,11 @@ class Dishes extends Component {
         this.data = res.answer;
         this.updateState({});
         jQueryReset('table_id');
+        gather('Dishes');
       })
       .catch(err => {
         console.log(err);
+        gather('Dishes');
       });
   }
 

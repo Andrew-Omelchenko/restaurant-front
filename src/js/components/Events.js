@@ -1,6 +1,6 @@
 import { API } from '../utils/config';
 import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
-import { toHtml } from '../utils/helper';
+import { toHtml, gather } from '../utils/helper';
 import Component from '../framework/Component';
 
 class Events extends Component {
@@ -17,6 +17,7 @@ class Events extends Component {
         console.log(res);
         this.data = res.answer;
         this.updateState({});
+        gather('Events');
       })
       .catch(err => {
         document
@@ -24,6 +25,7 @@ class Events extends Component {
             .innerHTML = `Error status: ${err.status || 
               'Server does not respond'}, ${err.answer || 
               'check connection'}`;
+        gather('Events');
       });
   }
 

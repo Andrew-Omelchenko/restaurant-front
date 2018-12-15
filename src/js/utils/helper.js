@@ -85,3 +85,8 @@ export function isDateStringValid(dateStr) {
   }
   return true;
 };
+
+export function gather(data) {
+  const event = new CustomEvent('gather', { 'detail': data });
+  document.dispatchEvent(event);
+};
