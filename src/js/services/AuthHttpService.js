@@ -59,6 +59,10 @@ class AuthHttpService {
   reserveHours(queryData) {
     return this.post(API.ENDPOINTS.RESERVE, JSON.stringify(queryData));
   }
+
+  getEvents() {
+    return this.get(API.ENDPOINTS.EVENTS);
+  }
 }
 
 export const AUTH_HTTP_SERVICE = new AuthHttpService();

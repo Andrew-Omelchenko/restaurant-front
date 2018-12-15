@@ -7,6 +7,7 @@ import Featured from './components/Featured';
 import Dishes from './components/Dishes';
 import Drinks from './components/Drinks';
 import Reservations from './components/Reservations';
+import Events from './components/Events';
 import Geo from './components/Geo';
 
 const routes = [
@@ -51,6 +52,10 @@ const routes = [
   {
     href: '/location',
     component: Geo
+  },
+  {
+    href: '/events',
+    component: Events
   },
   {
     href: '/logout',
