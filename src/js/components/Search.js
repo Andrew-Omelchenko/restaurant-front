@@ -1,9 +1,13 @@
 import { bindAll, toHtml } from '../utils/helper';
+import { SEARCH_ROOTS } from '../utils/config';
 import Component from '../framework/Component';
 
 class Search extends Component {
   constructor(props) {
     super(props);
+
+    this.searchText = '';
+    this.searchData = [];
 
     bindAll(this, 'onSubmit');
 
@@ -15,6 +19,17 @@ class Search extends Component {
 
   onSubmit(ev) {
     ev.preventDefault();
+
+    const form = document.getElementById('search-form');
+    this.searchText = form.search.value;
+    const urlBase = `${window.location.protocol}//${window.location.pathname}`;
+    this.searchData = SEARCH_ROOTS.map(element => {
+      return {
+        url: `${urlBase}${element}`,
+        htmlString: ''
+      };
+    });
+    console.log(this.searchData);
   }
 
   render() {
