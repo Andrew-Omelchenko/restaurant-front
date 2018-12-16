@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~datatables.net-bs4/css/dataTables.bootstrap4';
+@import '~luminous-lightbox/dist/luminous-basic.min';
 
 @import './abstracts/variables';
 
@@ -11,6 +12,7 @@
 @import './components/dishes';
 @import './components/drinks';
 @import './components/footer';
+@import './components/gallery';
 @import './components/geo';
 @import './components/header';
 @import './components/options';

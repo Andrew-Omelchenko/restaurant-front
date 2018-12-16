@@ -9,6 +9,7 @@ import Dishes from './components/Dishes';
 import Drinks from './components/Drinks';
 import Reservations from './components/Reservations';
 import Events from './components/Events';
+import Gallery from './components/Gallery';
 import Geo from './components/Geo';
 
 const routes = [
@@ -66,6 +67,10 @@ const routes = [
     href: '/events',
     component: Events,
     searchable: true
+  },
+  {
+    href: '/gallery',
+    component: Gallery
   },
   {
     href: '/logout',

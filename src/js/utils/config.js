@@ -8,9 +8,11 @@ export const API = {
     DRINKS: '/winecard',
     HOURS: '/hours',
     RESERVE: '/reserve',
-    EVENTS: '/events'
+    EVENTS: '/events',
+    GALLERY: '/gallery'
   },
-  IMAGES: '/static/images/'
+  IMAGES: '/static/images/',
+  IMG_GALLERY: '/static/gallery/'
 };
 
 export const MAP_API = {

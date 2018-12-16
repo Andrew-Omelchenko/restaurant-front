@@ -63,6 +63,10 @@ class AuthHttpService {
   getEvents() {
     return this.get(API.ENDPOINTS.EVENTS);
   }
+
+  getGallery() {
+    return this.get(API.ENDPOINTS.GALLERY);
+  }
 }
 
 export const AUTH_HTTP_SERVICE = new AuthHttpService();
