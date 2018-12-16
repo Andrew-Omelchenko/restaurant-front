@@ -39,7 +39,7 @@ class Carousel extends Component {
                 <img src="./img/carousel-restaurant.jpg" alt="cooking">
                 <div class="carousel-caption">
                   <h3>Great Cooking</h3>
-                  <p>We love you!</p>
+                  <p>From top chefs...</p>
                   <a href="#/featured" class="btn btn-outline-success">MENU</a>
                 </div>   
               </div>
@@ -53,7 +53,8 @@ class Carousel extends Component {
           </div>
         </div>
         <div class="col-sm-4 text-center">
-          <p>Welcome, dear friends!</p>
+          <p>Food as it should be. Food should taste good. It should feel good. It should do good things for you and the world around you.</p>
+          <p>WELCOME!</p>
         </div>
       </div>
     `;
