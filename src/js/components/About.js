@@ -12,7 +12,9 @@ class About extends Component {
   render() {
     return `
       <div class="row">
-        <h3>About Us</h3>
+        <div class="col-sm-12 text-sm-left text-center">
+          <h3>About Us</h3>
+        </div>
       </div>
       <div class="row">
         <div class="col-sm-4 text-sm-right text-center">
