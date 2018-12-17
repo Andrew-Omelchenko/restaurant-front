@@ -1,4 +1,4 @@
-import { bindAll, toHtml, processNode } from '../utils/helper';
+import { bindAll, toHtml, processNode, processString } from '../utils/helper';
 import routes from '../routes';
 import Component from '../framework/Component';
 
@@ -6,7 +6,7 @@ class Search extends Component {
   constructor(props) {
     super(props);
 
-    this.regexp = null;
+    this.searchStr = '';
     // number of ready async queries
     this.readyCount = 0;
     // total number of async queries in structure
@@ -50,12 +50,12 @@ class Search extends Component {
     ev.preventDefault();
 
     const form = document.getElementById('search-form');
-    this.regexp = new RegExp(form.search.value, 'i'); // case insensitive
+    this.searchStr = form.search.value;
     this.processStructure();
   }
 
   processStructure() {
-    console.log(this.regexp);
+    console.log(processString(this.searchStr, 'mamamia'));
   }
 
   render() {

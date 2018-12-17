@@ -108,3 +108,17 @@ export function processNode(node) {
       };
     });
 }
+
+export function processString(searchStr, string) {
+  const regexp = new RegExp(searchStr, 'ig'); // case insensitive
+  let result = [];
+  let count = 0;
+  while (result = regexp.exec(string)) {
+    count++;
+  }
+  const processed = string.replace(regexp, `<span class="bd-dark text-white">${searchStr}</span>`);
+  return {
+    count,
+    processed
+  };
+};
