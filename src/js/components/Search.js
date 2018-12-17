@@ -16,8 +16,10 @@ class Search extends Component {
       .filter(route => route.searchable)
       .map(route => {
         return {
+          alias: route.alias,
           href: route.href,
-          value: new route.component({}).update({}) // async in its nature
+          value: new route.component({}).update({}), // async in its nature
+          parsed: []
         };
       });
       // this.structure.forEach(el => console.log(el.value.textContent));
@@ -34,10 +36,13 @@ class Search extends Component {
 
   onGather(ev) {
     this.readyCount++;
-    // if all async queries are finished...
+    // when all async queries are finished (successfully or not) ...
     if (this.readyCount === this.asyncCount) {
-      // this.structure.forEach(el => console.log(el.value.textContent));
-      console.log(processNode(this.structure[0].value));
+      // console.log(processNode(this.structure[0].value));
+      this.structure.forEach(element => {
+        element.parsed = processNode(element.value);
+      });
+      console.log(this.structure);
     }
   }
 
