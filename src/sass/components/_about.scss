@@ -1,0 +1,17 @@
+.about {
+  
+}
+
+@media (min-width: 576px) {
+  .about {
+    
+    &__img {
+      width: 50vw;
+      height: auto;
+
+      float: right;
+      padding-left: 1rem;;
+      padding-bottom: 1rem;
+    }
+  }
+}

@@ -17,19 +17,25 @@ class About extends Component {
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-4 text-sm-right text-center">
+        <div name="about" class="col-sm-12 text-sm-left text-center">
           <p>
-            WELCOME is designed to create a community atmosphere as a good, old fashioned, friendly, neighborhood restaurant. The location at 61 Unknown St. puts the restaurant in the heart of lively, downtown Vinnytsia.
+            <img class="img-fluid about__img" src="./img/interior.jpg" alt="interior">
+            <span class="d-block">
+              WELCOME is designed to create a community atmosphere as a good, old fashioned, friendly, neighborhood restaurant. The location at 61 Unknown St. puts the restaurant in the heart of lively, downtown Vinnytsia.
+            </span>
+            <span class="d-block">
+              &nbsp;
+            </span>
+            <span class="d-block">
+              A priority of WELCOME is serving fresh, healthful fare with all selections made on the premises from "scratch." To keep food costs down, the menu is simple, yet creative with many interchangeable ingredients. Foods come from local and regional suppliers whenever possible, with a preference for organically grown products. Emphasis is placed on the menu which features old-world menu cooked daily. A deli counter, fine coffees, and a fresh juice bar is also showcased.
+            </span>
+            <span class="d-block">
+              &nbsp;
+            </span>
+            <span class="d-block">
+              The limited menu is based on "comfort" foods at reasonable prices.
+            </span>
           </p>
-          <p>
-            A priority of WELCOME is serving fresh, healthful fare with all selections made on the premises from "scratch." To keep food costs down, the menu is simple, yet creative with many interchangeable ingredients. Foods come from local and regional suppliers whenever possible, with a preference for organically grown products. Emphasis is placed on the menu which features old-world menu cooked daily. A deli counter, fine coffees, and a fresh juice bar is also showcased.
-          </p>
-          <p>
-            The limited menu is based on "comfort" foods at reasonable prices.
-          </p>
-        </div>
-        <div class="col-sm-8 text-center">
-        </div>
       </div>
     `;
   }
