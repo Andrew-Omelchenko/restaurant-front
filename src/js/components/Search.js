@@ -19,7 +19,8 @@ class Search extends Component {
           alias: route.alias,
           href: route.href,
           value: new route.component({}).update({}), // async in its nature
-          parsed: []
+          parsed: [],
+          count: 0
         };
       });
       // this.structure.forEach(el => console.log(el.value.textContent));

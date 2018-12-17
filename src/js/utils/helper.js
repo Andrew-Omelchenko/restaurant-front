@@ -102,7 +102,9 @@ export function processNode(node) {
       return {
         tag: element.nodeName,
         name: element.getAttribute('name'),
-        text: element.textContent.replace(/\s+/g, ' ')
+        text: element.textContent.replace(/\s+/g, ' '),
+        processed: '',
+        count: 0
       };
     });
 }
