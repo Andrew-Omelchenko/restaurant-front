@@ -116,7 +116,7 @@ export function processString(searchStr, string) {
   while (result = regexp.exec(string)) {
     count++;
   }
-  const processed = string.replace(regexp, `<span class="bd-dark text-white">${searchStr}</span>`);
+  const processed = string.replace(regexp, `<span class="bg-dark text-white">${searchStr}</span>`);
   return {
     processed,
     count

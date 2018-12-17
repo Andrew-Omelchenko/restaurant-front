@@ -53,6 +53,7 @@ class Search extends Component {
     const form = document.getElementById('search-form');
     this.searchStr = form.search.value;
     this.processStructure();
+    this.updateState({});
   }
 
   processStructure() {
@@ -75,33 +76,60 @@ class Search extends Component {
   }
 
   render() {
-    let treeRootStr = '';
-    this.structure.forEach(element => {
-
-    });
+    let treeStr = `<ul>`;
+    this.structure
+      .filter(element => element.count)
+      .forEach(element => {
+        treeStr += `
+          <li class="font-weight-bold">
+            <a href="#${element.href}">${element.alias}</a>: Count: ${element.count}
+          </li>
+        `;
+        treeStr += `<ul>`;
+        element.parsed
+          .filter(parsel => parsel.count)
+          .forEach(parsel => {
+            treeStr += `
+              <li>
+                <a class="d-block font-weight-bold" href="#${element.href}?go=${parsel.name}">${parsel.name}</a>
+                <span class="d-block font-weight-bold">Count: ${parsel.count}</span>
+                <span class="d-block"><small>${parsel.processed}</small></span>
+              </li>
+            `;
+          });
+        treeStr += `</ul>`;
+      });
+    treeStr += `</ul>`;
 
     const htmlString = `
       <section>
         <div class="row">
-          <form id="search-form" class="form-inline my-2 my-lg-0 search-form">
-            <input 
-              name="search" 
-              class="form-control" 
-              id="search" 
-              type="text" 
-              placeholder="Enter search text here..."
-              required 
-              value="">
-            <button 
-              class="btn btn-outline-success my-2 my-sm-0" 
-              id="search-btn" 
-              type="submit">
-              Search
-            </button>
-          </form>
+          <div class="col-sm-12">
+            <form id="search-form" class="form-inline my-2 my-lg-0 search-form">
+              <input 
+                name="search" 
+                class="form-control" 
+                id="search" 
+                type="text" 
+                placeholder="Enter search text here..."
+                required 
+                value="">
+              <button 
+                class="btn btn-outline-success my-2 my-sm-0" 
+                id="search-btn" 
+                type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
         <div class="row">
-          <p class="text-danger" id="alert-placeholder">&nbsp</p>
+          <div class="col-sm-12">
+            <h3>Search result:</h3>
+            <p class="font-weight-bold">Total: ${this.total}</p>
+            <p class="text-danger" id="alert-placeholder">&nbsp</p>
+            ${treeStr}
+          </div>
         </div>
       </section>
     `;

@@ -52,7 +52,7 @@ class Carousel extends Component {
             </a>
           </div>
         </div>
-        <div class="col-sm-4 text-center">
+        <div name="mission" class="col-sm-4 text-center">
           <p>Food as it should be. Food should taste good. It should feel good. It should do good things for you and the world around you.</p>
           <p>WELCOME!</p>
         </div>
