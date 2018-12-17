@@ -29,7 +29,7 @@ class Search extends Component {
     bindAll(this, 'onSubmit', 'onGather');
 
     this.host = document.createElement('main');
-    this.host.classList.add('container-fluid');
+    this.host.classList.add('container');
 
     this.host.addEventListener('submit', this.onSubmit, true);
     document.removeEventListener('gather', this.onGather, true);
@@ -85,7 +85,7 @@ class Search extends Component {
             <a href="#${element.href}">${element.alias}</a>: Count: ${element.count}
           </li>
         `;
-        treeStr += `<ul>`;
+        treeStr += `<div class="text-justify"><ul>`;
         element.parsed
           .filter(parsel => parsel.count)
           .forEach(parsel => {
@@ -97,7 +97,7 @@ class Search extends Component {
               </li>
             `;
           });
-        treeStr += `</ul>`;
+        treeStr += `</ul></div>`;
       });
     treeStr += `</ul>`;
 
@@ -115,7 +115,7 @@ class Search extends Component {
                 required 
                 value="">
               <button 
-                class="btn btn-outline-success my-2 my-sm-0" 
+                class="btn btn-success my-2 my-sm-0" 
                 id="search-btn" 
                 type="submit">
                 Search
