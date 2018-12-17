@@ -20,7 +20,8 @@ const routes = [
   {
     href: '/',
     component: Home,
-    searchable: true
+    searchable: true,
+    alias: 'Home Page'
   },
   {
     href: '/login',
@@ -42,17 +43,20 @@ const routes = [
   {
     href: '/featured',
     component: Featured,
-    searchable: true
+    searchable: true,
+    alias: 'Featured Dishes'
   },
   {
     href: '/dishes',
     component: Dishes,
-    searchable: true
+    searchable: true,
+    alias: 'Dishes'
   },
   {
     href: '/drinks',
     component: Drinks,
-    searchable: true
+    searchable: true,
+    alias: 'Drinks'
   },
   {
     href: '/reservations',
@@ -66,7 +70,8 @@ const routes = [
   {
     href: '/events',
     component: Events,
-    searchable: true
+    searchable: true,
+    alias: 'Events'
   },
   {
     href: '/gallery',
