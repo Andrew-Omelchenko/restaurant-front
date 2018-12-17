@@ -16,7 +16,6 @@ class Router extends Component {
     };
 
     this.host = host;
-    this.parameters = [];
 
     bindAll(this, 'handleUrlChange', 'navigateTo');
 
@@ -28,7 +27,6 @@ class Router extends Component {
   }
 
   get path() {
-    this.parameters = getUrlParams(window.location.hash);
     return (window.location.hash.slice(1).split('?'))[0];
   }
 
@@ -56,7 +54,7 @@ class Router extends Component {
       }
 
       this.updateState({
-        currentComponent: new Proxy({}, new nextRoute.component({ parameters: this.parameters })),
+        currentComponent: new Proxy({}, new nextRoute.component()),
         currentRoute: nextRoute
       });
     }

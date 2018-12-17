@@ -7,6 +7,10 @@ class Home extends Component {
   constructor(props) {
     super(props);
 
+    this.parameters = getUrlParams(window.location.hash);
+    // remove url parameters
+    window.location.hash = (window.location.hash.split('?'))[0];
+
     this.carousel = new Carousel();
     this.about = new About();
 
