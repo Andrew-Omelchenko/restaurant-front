@@ -7,6 +7,7 @@ class Search extends Component {
     super(props);
 
     this.searchStr = '';
+    this.total = 0;
     // number of ready async queries
     this.readyCount = 0;
     // total number of async queries in structure
@@ -55,7 +56,20 @@ class Search extends Component {
   }
 
   processStructure() {
-    console.log(processString(this.searchStr, 'mamamia'));
+    let total = 0;
+    this.structure.forEach(element => {
+      let subtotal = 0;
+      element.parsed.forEach(parsel => {
+        const { processed, count } = processString(this.searchStr, parsel.text);
+        parsel.processed = processed;
+        parsel.count = count;
+        subtotal += count;
+      });
+      element.count = subtotal;
+      total += subtotal;
+    });
+    this.total = total;
+    console.log(this.structure, this.total);
   }
 
   render() {

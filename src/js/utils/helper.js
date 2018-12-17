@@ -118,7 +118,7 @@ export function processString(searchStr, string) {
   }
   const processed = string.replace(regexp, `<span class="bd-dark text-white">${searchStr}</span>`);
   return {
-    count,
-    processed
+    processed,
+    count
   };
 };
