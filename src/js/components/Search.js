@@ -66,6 +66,7 @@ class Search extends Component {
         subtotal += count;
       });
       element.count = subtotal;
+      element.parsed.sort((elem1, elem2) => elem2.count - elem1.count); // sort descending
       total += subtotal;
     });
     this.total = total;
