@@ -9,7 +9,8 @@ export const API = {
     HOURS: '/hours',
     RESERVE: '/reserve',
     EVENTS: '/events',
-    GALLERY: '/gallery'
+    GALLERY: '/gallery',
+    ORDERS: '/orders'
   },
   IMAGES: '/static/images/',
   IMG_GALLERY: '/static/gallery/'

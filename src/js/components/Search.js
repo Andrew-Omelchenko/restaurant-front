@@ -37,7 +37,7 @@ class Search extends Component {
     // if all async queries are finished...
     if (this.readyCount === this.asyncCount) {
       // this.structure.forEach(el => console.log(el.value.textContent));
-      console.log(processNode(this.structure[2].value));
+      console.log(processNode(this.structure[0].value));
     }
   }
 

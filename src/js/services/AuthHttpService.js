@@ -67,6 +67,10 @@ class AuthHttpService {
   getGallery() {
     return this.get(API.ENDPOINTS.GALLERY);
   }
+
+  getOrders(queryData) {
+    return this.post(API.ENDPOINTS.ORDERS, JSON.stringify(queryData));
+  }
 }
 
 export const AUTH_HTTP_SERVICE = new AuthHttpService();
