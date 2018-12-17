@@ -53,10 +53,16 @@ class Profile extends Component {
       ordersStr += `
         <div class="col-lg-3 col-md-4 col-sm-6 shadow mx-1 my-1">
           <p>ID: ${element.id}</p>
-          <p>Date: ${new Date(element.reserved_date).format('YYYY-MM-DD')}</p>
+          <p>Date: ${(new Date(element.reserved_date)).toLocaleDateString()}</p>
           <p>Hour: ${align2(element.reserved_hour)}:00</p>
           <p>Table #: ${element.table_id}</p>
-          <p><a class="btn btn-info" href="#">Complain</a></p>
+          <p><a 
+              class="btn btn-info" 
+              href="mailto:complaints.welcome.vin@gmail.com?subject=Order%20Id:%20${element.id}" 
+              target="_top">
+            Complain
+            </a>
+          </p>
         </div>
       `;
     });
