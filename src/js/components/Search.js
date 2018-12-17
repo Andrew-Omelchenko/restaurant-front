@@ -6,7 +6,7 @@ class Search extends Component {
   constructor(props) {
     super(props);
 
-    this.searchText = '';
+    this.regexp = null;
     // number of ready async queries
     this.readyCount = 0;
     // total number of async queries in structure
@@ -38,7 +38,6 @@ class Search extends Component {
     this.readyCount++;
     // when all async queries are finished (successfully or not) ...
     if (this.readyCount === this.asyncCount) {
-      // console.log(processNode(this.structure[0].value));
       this.structure.forEach(element => {
         element.parsed = processNode(element.value);
       });
@@ -50,8 +49,12 @@ class Search extends Component {
     ev.preventDefault();
 
     const form = document.getElementById('search-form');
-    this.searchText = form.search.value;
-    console.log(this.searchText);
+    this.regexp = new RegExp(form.search.value, 'i'); // case insensitive
+    this.processStructure();
+  }
+
+  processStructure() {
+    console.log(this.regexp);
   }
 
   render() {
