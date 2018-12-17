@@ -121,13 +121,13 @@ class Search extends Component {
                 Search
               </button>
             </form>
+            <p class="text-danger" id="alert-placeholder">&nbsp</p>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12">
             <h3>Search results:</h3>
             <p class="font-weight-bold">Total: ${this.total}</p>
-            <p class="text-danger" id="alert-placeholder">&nbsp</p>
             ${treeStr}
           </div>
         </div>
