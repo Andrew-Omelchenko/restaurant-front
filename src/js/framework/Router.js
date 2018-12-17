@@ -1,7 +1,7 @@
 import { jQueryReset } from '../utils/helper';
 import Component from './Component';
 import Proxy from './Proxy';
-import { bindAll, isEqualPaths, extractUrlParams, getUrlParams } from '../utils/helper';
+import { bindAll, isEqualPaths, extractUrlParams } from '../utils/helper';
 
 class Router extends Component {
   constructor(props) {

@@ -1,3 +1,4 @@
+import { getUrlParams } from '../utils/helper';
 import Component from '../framework/Component';
 
 class About extends Component {
@@ -6,7 +7,7 @@ class About extends Component {
 
     this.host = document.createElement('section');
     this.host.classList.add('container');
-    this.host.setAttribute('name', 'about');
+    this.host.setAttribute('name', 'about-us');
   }
 
   render() {
