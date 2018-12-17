@@ -91,8 +91,8 @@ class Search extends Component {
           .forEach(parsel => {
             treeStr += `
               <li>
-                <a class="d-block font-weight-bold" href="#${element.href}?go=${parsel.name}">${parsel.name}</a>
-                <span class="d-block font-weight-bold">Count: ${parsel.count}</span>
+                <a class="d-block font-weight-bold" href="#${element.href}?go='${parsel.name}'">${parsel.name}</a>
+                <span class="d-block"><small>Count: ${parsel.count}</small></span>
                 <span class="d-block"><small>${parsel.processed}</small></span>
               </li>
             `;
@@ -125,7 +125,7 @@ class Search extends Component {
         </div>
         <div class="row">
           <div class="col-sm-12">
-            <h3>Search result:</h3>
+            <h3>Search results:</h3>
             <p class="font-weight-bold">Total: ${this.total}</p>
             <p class="text-danger" id="alert-placeholder">&nbsp</p>
             ${treeStr}
