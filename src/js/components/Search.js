@@ -69,10 +69,16 @@ class Search extends Component {
       total += subtotal;
     });
     this.total = total;
+    this.structure.sort((elem1, elem2) => elem2.count - elem1.count); // sort descending
     console.log(this.structure, this.total);
   }
 
   render() {
+    let treeRootStr = '';
+    this.structure.forEach(element => {
+
+    });
+
     const htmlString = `
       <section>
         <div class="row">
