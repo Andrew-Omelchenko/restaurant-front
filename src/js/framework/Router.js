@@ -1,7 +1,7 @@
 import { jQueryReset } from '../utils/helper';
 import Component from './Component';
 import Proxy from './Proxy';
-import { bindAll, isEqualPaths, extractUrlParams } from '../utils/helper';
+import { bindAll, isEqualPaths, extractUrlParams, getUrlParams } from '../utils/helper';
 
 class Router extends Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class Router extends Component {
     };
 
     this.host = host;
+    this.parameters = [];
 
     bindAll(this, 'handleUrlChange', 'navigateTo');
 
@@ -27,14 +28,15 @@ class Router extends Component {
   }
 
   get path() {
-    return window.location.hash.slice(1);
+    this.parameters = getUrlParams(window.location.hash);
+    return (window.location.hash.slice(1).split('?'))[0];
   }
 
   handleUrlChange(path) {
     const { routes, currentRoute } = this.state;
 
     // const nextRoute = routes.find(({ href }) => href === this.path);
-    const nextRoute = routes.find(({ href }) => isEqualPaths(href, this.path));
+    const nextRoute = routes.find(({ href }) => isEqualPaths(href, path));
     console.log(nextRoute);
 
     if (nextRoute && nextRoute !== currentRoute) {
@@ -54,7 +56,7 @@ class Router extends Component {
       }
 
       this.updateState({
-        currentComponent: new Proxy({}, new nextRoute.component()),
+        currentComponent: new Proxy({}, new nextRoute.component({ parameters: this.parameters })),
         currentRoute: nextRoute
       });
     }

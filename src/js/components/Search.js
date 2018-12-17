@@ -93,7 +93,7 @@ class Search extends Component {
               <li>
                 <a 
                   class="d-block font-weight-bold" 
-                  href='#${element.href}?go="${parsel.name}"'
+                  href="#${element.href}?go=${parsel.name}"
                   target="_blank">
                   ${parsel.name}
                 </a>

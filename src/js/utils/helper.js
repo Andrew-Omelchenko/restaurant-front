@@ -122,3 +122,20 @@ export function processString(searchStr, string) {
     count
   };
 };
+
+// https://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
+export function getUrlParams(url) {
+  let params = {};
+  (url + '?')
+    .split('?')[1]
+    .split('&')
+    .forEach(function (pair) {
+      pair = (pair + '=')
+        .split('=')
+        .map(decodeURIComponent);
+      if (pair[0].length) {
+        params[pair[0]] = pair[1];
+      }
+    });
+  return params;
+};
