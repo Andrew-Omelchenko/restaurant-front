@@ -1,4 +1,4 @@
-import { jQueryReset, gather } from '../utils/helper';
+import { jQueryReset, gather, scrollWindow } from '../utils/helper';
 
 import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
 import Component from '../framework/Component';
@@ -17,7 +17,11 @@ class Drinks extends Component {
         console.log(res);
         this.data = res.answer;
         this.updateState({});
-        jQueryReset('table_id');
+        if (!this.parameters.go) {
+          jQueryReset('table_id');
+        } else {
+          scrollWindow(this.parameters.go);
+        }
         gather('Drinks');
       })
       .catch(err => {
@@ -55,9 +59,11 @@ class Drinks extends Component {
     const table = document.createElement('table');
     table.setAttribute('id', 'table_id');
     table.setAttribute('name', 'drinks');
-    table.classList.add('table', 'table-sm', 'table-striped');
+    table.classList.add('table', 'table-sm');
     table.innerHTML = str;
-    jQueryReset('table_id');
+    if (!this.parameters.go) {
+      jQueryReset('table_id');
+    }
 
     return table;
   }
