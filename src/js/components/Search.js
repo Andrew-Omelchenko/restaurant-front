@@ -82,7 +82,7 @@ class Search extends Component {
       .forEach(element => {
         treeStr += `
           <li class="font-weight-bold">
-            <a href="#${element.href}" target="_blank">${element.alias}</a>: Count: ${element.count}
+            <a href="#${element.href}" target="_blank">${element.alias}:</a> Count: ${element.count}
           </li>
         `;
         treeStr += `<div class="text-justify"><ul>`;
@@ -92,12 +92,12 @@ class Search extends Component {
             treeStr += `
               <li>
                 <a 
-                  class="d-block font-weight-bold" 
+                  class="d-inline font-weight-bold" 
                   href="#${element.href}?go=${parsel.name}"
                   target="_blank">
-                  ${parsel.name}
+                  ${parsel.name}:
                 </a>
-                <span class="d-block"><small>Count: ${parsel.count}</small></span>
+                <span class="d-inline font-weight-bold">Count: ${parsel.count}</span>
                 <span class="d-block"><small>${parsel.processed}</small></span>
               </li>
             `;
