@@ -47,7 +47,7 @@ class Gallery extends Component {
       <section name="gallery">
         <h3 class="text-sm-left text-center">Our Gallery</h3>
         <p class="text-danger" id="alert-placeholder">&nbsp</p>
-        <div class="row text-center">
+        <div class="row text-center bg-dark text-white">
           <ul class="list-inline">
             ${imagesStr}
           </ul>
