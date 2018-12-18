@@ -12,7 +12,14 @@ export const bindAll = (context, ...names) => {
   });
 };
 
-export const toHtml = string => {
+// export const toHtml = string => {
+//   const template = document.createElement('template');
+//   template.innerHTML = string.trim();
+
+//   return template.content;
+// };
+
+export function toHtml(string) {
   const template = document.createElement('template');
   template.innerHTML = string.trim();
 
