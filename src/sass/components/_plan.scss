@@ -20,6 +20,10 @@
       polygon {
         fill: transparent;
         cursor: pointer;
+
+        &:hover {
+          outline: 3px dotted #007bff;
+        }
       }
     }
   }
