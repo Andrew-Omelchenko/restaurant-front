@@ -21,7 +21,9 @@ header {
 
 main {
   padding-top: 9.5rem;
-  padding-bottom: 2.8rem;
+  // padding-bottom: 2.8rem;
+  // to allow scrollToView() to work correctly
+  padding-bottom: 100vh;
 }
 
 section {

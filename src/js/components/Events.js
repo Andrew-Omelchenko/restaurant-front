@@ -34,12 +34,12 @@ class Events extends Component {
 
     this.data.forEach(element => {
       eventsStr += `
-        <div class="card">
+        <div class="card" name="event-${element.id}">
           <div class="card-header">
             Featured
           </div>
           <img class="card-img-top" src="${API.BASE_URL}${API.IMAGES}${element.image}" alt="${element.event}">
-          <div class="card-body" name="event-${element.id}">
+          <div class="card-body">
             <h5 class="card-title">${element.event}</h5>
             <p class="card-text">${element.description}</p>
             <p class="card-text font-weight-bold">Starts: ${element.date} at ${element.time}</p>

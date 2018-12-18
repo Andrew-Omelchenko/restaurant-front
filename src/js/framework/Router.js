@@ -1,4 +1,4 @@
-import { jQueryReset } from '../utils/helper';
+import { jQueryReset, getUrlParams, getOffset } from '../utils/helper';
 import Component from './Component';
 import Proxy from './Proxy';
 import { bindAll, isEqualPaths, extractUrlParams } from '../utils/helper';
@@ -16,6 +16,8 @@ class Router extends Component {
     };
 
     this.host = host;
+    this.parameters = {};
+
 
     bindAll(this, 'handleUrlChange', 'navigateTo');
 
@@ -27,6 +29,7 @@ class Router extends Component {
   }
 
   get path() {
+    this.parameters = getUrlParams(window.location.hash);
     return (window.location.hash.slice(1).split('?'))[0];
   }
 
@@ -57,6 +60,16 @@ class Router extends Component {
         currentComponent: new Proxy({}, new nextRoute.component()),
         currentRoute: nextRoute
       });
+
+      if (this.parameters.go) {
+        const nodes = document.getElementsByName(this.parameters.go);
+        if (nodes[0]) {
+          nodes[0].classList.add('bg-yellow', 'text-dark');
+          const headerRect = document.getElementById('header').getBoundingClientRect();
+          nodes[0].scrollIntoView();
+          window.scrollBy(0, -headerRect.height);
+        }
+      }
     }
   }
 

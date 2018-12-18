@@ -139,3 +139,22 @@ export function getUrlParams(url) {
     });
   return params;
 };
+
+// export function getOffset(element) {
+//   let _x = 0;
+//   let _y = 0;
+//   while(element && !isNaN(element.offsetLeft) && !isNaN(element.offsetTop)) {
+//       _x += element.offsetLeft - element.scrollLeft;
+//       _y += element.offsetTop - element.scrollTop;
+//       element = element.offsetParent;
+//   }
+//   return { top: _y, left: _x };
+// }
+
+export function getOffset(el) {
+  const rect = el.getBoundingClientRect();
+  return {
+    left: rect.left + window.scrollX,
+    top: rect.top + window.scrollY
+  };
+};

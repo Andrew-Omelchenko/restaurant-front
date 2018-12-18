@@ -9,6 +9,7 @@ class Header extends Component {
     super(props);
 
     this.host = document.createElement('header');
+    this.host.setAttribute('id', 'header');
     this.host.classList.add('header', 'fixed-top');
     // this.host.classList.add('fixed-top');
 
