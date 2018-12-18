@@ -1,10 +1,11 @@
-import { bindAll } from '../utils/helper';
+import { bindAll, getUrlParams } from '../utils/helper';
 
 class Component {
   constructor(props) {
     this.state = {};
     this.props = props || {};
     this.host = null;
+    this.parameters = getUrlParams(window.location.hash);
 
     bindAll(this, 'updateState', 'update', 'postRender');
   }

@@ -1,6 +1,6 @@
 import { API } from '../utils/config';
 import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
-import { toHtml, gather } from '../utils/helper';
+import { toHtml, gather, scrollWindow } from '../utils/helper';
 import Component from '../framework/Component';
 
 class Events extends Component {
@@ -18,6 +18,9 @@ class Events extends Component {
         this.data = res.answer;
         this.updateState({});
         gather('Events');
+        if (this.parameters.go) {
+          scrollWindow(this.parameters.go);
+        }
       })
       .catch(err => {
         document
@@ -34,7 +37,7 @@ class Events extends Component {
 
     this.data.forEach(element => {
       eventsStr += `
-        <div class="card" name="event-${element.id}">
+        <div class="col-sm-6 col-md-4 card" name="event-${element.id}">
           <div class="card-header">
             Featured
           </div>

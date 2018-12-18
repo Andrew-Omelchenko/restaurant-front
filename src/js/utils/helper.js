@@ -158,3 +158,13 @@ export function getOffset(el) {
     top: rect.top + window.scrollY
   };
 };
+
+export function scrollWindow(name) {
+  const nodes = document.getElementsByName(name);
+  if (nodes[0]) {
+    nodes[0].classList.add('bg-yellow', 'text-dark');
+    const headerRect = document.getElementById('header').getBoundingClientRect();
+    nodes[0].scrollIntoView();
+    window.scrollBy(0, -headerRect.height);
+  }
+};
