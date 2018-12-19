@@ -1,4 +1,4 @@
-import { jQueryReset, gather, scrollWindow } from '../utils/helper';
+import { toHtml, jQueryReset, gather, scrollWindow } from '../utils/helper';
 
 import { AUTH_HTTP_SERVICE } from '../services/AuthHttpService';
 import Component from '../framework/Component';
@@ -25,7 +25,11 @@ class Drinks extends Component {
         gather('Drinks');
       })
       .catch(err => {
-        console.log(err);
+        document
+          .getElementById('alert-placeholder')
+          .innerHTML = `Error status: ${err.status || 
+            'Server does not respond'}, ${err.answer || 
+            'check connection'}`;
         gather('Drinks');
       });
   }
@@ -65,7 +69,22 @@ class Drinks extends Component {
       jQueryReset('table_id');
     }
 
-    return table;
+    const bodyStr = `
+      <section class="row">
+        <div class="col-sm-12">
+          <h3>List of Drinks</h3>
+          <p class="text-danger" id="alert-placeholder">&nbsp</p>
+          <div id="table-placeholder"></div>
+        </div>
+      </section>
+    `;
+
+    const body = toHtml(bodyStr);
+    body.querySelector('#table-placeholder').appendChild(table);
+    
+    return [
+      body
+    ];
   }
 }
 
