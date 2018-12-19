@@ -38,8 +38,8 @@ class Header extends Component {
     `;
 
     const node = toHtml(htmlString);
-    node.getElementById('clock-placeholder').append(this.clock.update());
-    node.getElementById('options-placeholder').append(this.options.update({ isLogin: login}));
+    node.querySelector('#clock-placeholder').appendChild(this.clock.update());
+    node.querySelector('#options-placeholder').appendChild(this.options.update({ isLogin: login}));
 
     return [
       node,
