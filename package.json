@@ -33,6 +33,7 @@
     "datatables.net-bs4": "^1.10.19",
     "jquery": "^3.3.1",
     "luminous-lightbox": "^2.3.2",
-    "popper.js": "^1.14.6"
+    "popper.js": "^1.14.6",
+    "whatwg-fetch": "^3.0.0"
   }
 }

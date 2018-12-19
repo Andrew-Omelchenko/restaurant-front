@@ -3,6 +3,7 @@ import '../sass/main.scss';
 import 'bootstrap';
 import 'datatables.net-bs4';
 import '@webcomponents/webcomponentsjs';
+import 'whatwg-fetch';
 import Router from './framework/Router';
 import routes from './routes';
 
