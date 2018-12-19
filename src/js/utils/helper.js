@@ -20,10 +20,10 @@ export const bindAll = (context, ...names) => {
 // };
 
 export function toHtml(string) {
-  const template = document.createElement('template');
+  const template = document.getElementById('temp_id');
   template.innerHTML = string.trim();
 
-  return template.content;
+  return template.content.cloneNode(true);
 };
 
 const URL_PARAM_REGEXP = /:\w+/g;

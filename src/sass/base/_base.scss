@@ -34,6 +34,10 @@ section {
 ul {
   list-style-type: none;
 }
+
+template {
+  display: none;
+}
   
 @media (min-width: 576px) {
   main {
