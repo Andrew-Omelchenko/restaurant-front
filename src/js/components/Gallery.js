@@ -12,7 +12,7 @@ class Gallery extends Component {
     this.luminousGallery = null;
 
     this.host = document.createElement('main');
-    this.host.classList.add('container-fluid');
+    this.host.classList.add('container-fluid', 'bg-dark', 'text-white');
 
     AUTH_HTTP_SERVICE.getGallery()
       .then(res => {
@@ -35,7 +35,7 @@ class Gallery extends Component {
 
     this.data.forEach(element => {
       imagesStr += `
-        <li class="list-inline-item my-1">
+        <li class="list-inline-item my-1 mx-1">
           <a class="our-gallery" href="${API.BASE_URL}${API.IMG_GALLERY}${element.image}.jpg">
             <img src="${API.BASE_URL}${API.IMG_GALLERY}${element.image}_tn.jpg">
           </a>
@@ -47,7 +47,7 @@ class Gallery extends Component {
       <section name="gallery">
         <h3 class="text-sm-left text-center">Our Gallery</h3>
         <p class="text-danger" id="alert-placeholder">&nbsp</p>
-        <div class="row text-center bg-dark text-white">
+        <div class="row text-center">
           <ul class="list-inline">
             ${imagesStr}
           </ul>
